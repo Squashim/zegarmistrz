@@ -1,0 +1,227 @@
+/* Style stylizujące elementy na stronie service.html */
+
+/* styl dla sekcji zawierającej kontener z instrukcją */
+section:has(.how-to-container) {
+	background: var(--black700); /* tło w kolorze ciemnym */
+}
+/* styl dla paragrafów w artykule */
+article > p {
+	text-align: justify; /* wyrównanie tekstu do lewej i prawej */
+}
+/* styl dla listy w kontenerze z usługami */
+.services-container ul {
+	margin-top: 1rem; /* margines na górze 10px */
+	display: grid; /* wyświetlanie w formie siatki */
+	grid-template-columns: 1fr; /* jeden kolumna zajmująca całą szerokość siatki */
+	font-weight: 500; /* waga czcionki 500 */
+	gap: 1.2rem; /* odstęp między elementami 12px */
+}
+/* styl dla kontenera zawierającego poszczególne kroki */
+.steps {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	position: relative; /* pozycja relatywna */
+	gap: 2rem; /* odstęp między elementami 20px */
+	margin: 2rem 0; /* margines 20px na górze i na dole, 0 po lewej i po prawej */
+}
+/* styl dla pojedynczego kroku */
+.step {
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	gap: 2rem; /* odstęp między elementami 20px */
+	font-weight: 500; /* waga czcionki 500 */
+}
+/* styl dla pseudo-elementu ::after w kontenerze z krokami / tworzy linię */
+.steps::after {
+	content: ""; /* treść pusta */
+	position: absolute; /* pozycja absolutna */
+	top: 0.5rem; /* odległość od góry 5px */
+	right: 0; /* odległość od prawej 0 */
+	left: 1.7rem; /* odległość od lewej 17px */
+	height: 95%; /* wysokość 95% rodzica */
+	width: 0.7rem; /* szerokość 7px */
+	background-color: var(--primary100); /* kolor tła zielony */
+}
+/* styl dla nagłówków h3 w kontenerach z adresem i kontaktem */
+.contact h3,
+.address h3 {
+	color: var(--secondary100); /* kolor tekstu */
+	letter-spacing: 1px; /* rozstawienie liter 1px */
+}
+/* styl dla kontenerów z adresem i kontaktem firmy */
+.contact,
+.address {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	gap: 0.5rem; /* odstęp między elementami 5px */
+	margin: 1.2rem 0; /* margines 12px na górze i na dole, 0 po lewej i po prawej */
+	align-items: center; /* wyśrodkowanie elementów w poziomie */
+}
+/* ukrywanie obrazka w kontenerze z kontaktem */
+.contact-img {
+	display: none; /* ukrywanie obrazka */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla każdej sekcji na stronie i dla kontenera z instrukcją */
+	section,
+	.how-to-container {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 0 auto; /* automatyczne wyśrodkowanie */
+	}
+	/* styl dla sekcji zawierającej kontener z instrukcją */
+	section:has(.how-to-container) {
+		max-width: unset; /* brak maksymalnej szerokości */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 768px */
+@media screen and (min-width: 768px) {
+	/* styl dla kontenera z informacjami*/
+	.information {
+		grid-column: span 2; /* szerokość kolumny 2 */
+	}
+	/* styl dla kontenera z kontaktem do firmy */
+	.contact-container {
+		display: grid; /* wyświetlanie w formie siatki */
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* dwie kolumny o takiej samej szerokości */
+	}
+	/* styl dla elementu oddzielającego w kontenerze z kontaktem */
+	.contact-container hr {
+		display: none; /* ukrywanie linii poziomej */
+	}
+	/* styl dla kontenera zawierającego poszczególne kroki */
+	.steps {
+		font-size: 1.8rem; /* wielkość tekstu 18px */
+		gap: 4rem; /* odstęp między elementami 40px */
+	}
+	/* styl dla listy w kontenerze z usługami */
+	.services-container ul {
+		margin: 2rem 0; /* margines 20px na górze i na dole, 0 po lewej i po prawej */
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* dwie kolumny o takiej samej szerokości */
+		gap: 1rem 2rem; /* odstęp między elementami 10px na górze i na dole, 20px po lewej i po prawej */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla każdej sekcji na stronie i dla kontenera z instrukcją */
+	section,
+	.how-to-container {
+		max-width: 80vw; /* maksymalna szerokość 80 jednostek szerokości ekranu */
+	}
+	/* styl dla paragrafów znajdujących się w sekcji, a także dla nazw poszczególnych usług */
+	section p,
+	.services-container li {
+		font-size: 1.8rem; /* wielkość tekstu 18px */
+	}
+	/* styl dla kontenera zawierającego poszczególne kroki */
+	.steps {
+		font-size: 2rem; /* wielkość tekstu 20px */
+		flex-direction: row; /* układanie elementów w rzędzie */
+		gap: 1rem; /* odstęp między elementami 10px */
+	}
+	/* styl dla pojedynczego kroku */
+	.step {
+		text-align: center; /* wyśrodkowanie tekstu */
+		flex-direction: column-reverse; /* układanie elementów w kolumnie odwrotnej */
+	}
+	/* styl dla pseudo-elementu ::after w kontenerze z krokami / tworzy linię */
+	.steps::after {
+		top: unset; /* odległość od góry brak */
+		bottom: 1.8rem; /* odległość od dołu 18px */
+		left: 0; /* pozycja od lewej 0 */
+		height: 0.7rem; /* wysokość pseudo-elementu 7px */
+		width: 100%; /* szerokość pseudo-elementu 100% */
+		background-color: var(--primary100); /* kolor tła */
+		z-index: 0; /* warstwa wyświetlania zerowa*/
+	}
+	/* styl dla pseudo-elementu ::before w kontenerze z krokami / tworzy strzałkę*/
+	.steps::before {
+		content: ""; /* dodanie treści pseudo-elementu */
+		bottom: 1.1rem; /* odległość od dołu 11px */
+		right: -1rem; /* odległość od prawej -10px */
+		height: 0; /* wysokość pseudo-elementu */
+		width: 0; /* szerokość pseudo-elementu */
+		border: 1rem solid transparent; /* obramowanie 10px przeźroczyste*/
+		border-right: 0; /* brak prawej krawędzi */
+		border-left: 2rem solid var(--primary100); /* lewa krawędź 20px w kolorze zielonym */
+		position: absolute; /* pozycja absolutna */
+		z-index: 4; /* warstwa widoczności 4*/
+	}
+	/* styl dla paragrafów w artykule */
+	section article > p {
+		padding: 1.2rem 0; /* wewnętrzny odstęp paragrafu */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1444px */
+@media screen and (min-width: 1444px) {
+	/* styl dla paragrafów w artykule */
+	section article > p {
+		max-width: 90rem; /* maksymalna szerokość tekstu 900px */
+	}
+	/* styl dla listy w kontenerze z usługami */
+	.services-container ul {
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* trzy kolumny o równej szerokości */
+	}
+	/* styl dla poszczególnych elementów listy w kontenerze z usługami */
+	.services-container li {
+		height: 6rem; /* wysokość elementu 60px */
+	}
+	/* styl dla kontenera zawierającego poszczególne kroki */
+	.steps {
+		margin: 8rem 0; /* margines górny i dolny 80px */
+		gap: 4rem; /* odstęp między elementami 40px */
+	}
+	/* styl dla ikony pojedynczego kroku */
+	.step span {
+		display: flex; /* wyświetlanie w trybie flexbox */
+		align-items: center; /* wyśrodkowanie w pionie */
+		justify-content: center; /* wyśrodkowanie w poziomie */
+		width: 6rem; /* szerokość 60px */
+		height: 6rem; /* wysokość 60 px*/
+		font-size: 3rem; /* rozmiar czcionki 30px */
+	}
+	/* styl dla pseudo-elementu ::after w kontenerze z krokami / tworzy linię */
+	.steps::after {
+		bottom: 2.6rem; /* odległość od dołu 26px */
+	}
+	/* styl dla pseudo-elementu ::before w kontenerze z krokami / tworzy strzałkę*/
+	.steps::before {
+		bottom: 2rem; /* odległość od dołu 20px */
+	}
+	/* styl dla kontenera zawierającego kontakt do firmy */
+	.contact-container {
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* trzy kolumny o równej szerokości */
+	}
+	/* styl dla kontenera zawierającego informacje w kontenerze z kontaktem */
+	.contact-container .information {
+		grid-column: span 2; /* zajmuje dwie kolumny */
+		margin-bottom: 4rem; /* margines dolny 40px */
+	}
+	/* styl dla kontenera ze zdjęciem kontaktu do firmy */
+	.contact-img {
+		display: block; /* wyświetlanie jako blok */
+		grid-column: 3 / 4; /* pozycja kolumn w siatce / od 3 do 4 kolumny (zajmuje ostatnią kolumnę)*/
+		grid-row: 1 / 3; /* pozycja wierszy w siatce / od 1 do 3 wiersza (zajmuje wszystkie wiersze)*/
+		width: 60rem; /* szerokość obrazu 600px */
+	}
+	/* styl dla zdjęcia kontaktu do firmy */
+	.contact-img img {
+		max-width: 100%; /* maksymalna szerokość 100%*/
+	}
+}

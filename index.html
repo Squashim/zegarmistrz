@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony index.html -->
+		<link rel="stylesheet" href="css/index.css" />
+
+		<!-- Dołączenie pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+
+		<!-- Dołączenie niezbędnych styli do obsługi slajdów wyświetlanych na stronie za pomocą biblioteki Swiper.js-->
+		<!-- źródło: https://swiperjs.com/ -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<!-- Dołączenie skryptów odpowiadających za obsługę nawigacji i stopki -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="js/handleNav.js"></script>
+		<script type="module" src="js/handleFooter.js"></script>
+
+		<!-- Dołączenie skryptu obsługującego działanie strony index.html -->
+		<script defer src="js/pages/index.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Nawigacja -->
+			<nav>
+				<!-- Link do strony głównej z logo -->
+				<a href="/zegarmistrz/index.html" class="logo">
+					<!-- Logo strony -->
+					<img src="assets/logo_white.png" alt="logo" />
+				</a>
+				<!-- Lista głównych linków nawigacyjnych -->
+				<ul class="nav-links">
+					<!-- Pozycja w liście -->
+					<li class="nav-link">
+						<!-- Link do strony głównej -->
+						<a href="/zegarmistrz/index.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol domu -->
+								<span class="material-symbols-outlined"> home </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Strona główna</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony serwisowej -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony o nas -->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link" id="nav-login">
+						<!-- Link do strony logowania -->
+						<a href="/zegarmistrz/pages/login.html" class="nav-link-btn">
+							<!-- Ikona logowania-->
+							<div class="nav-link-icon">
+								<!-- Symbol logowania -->
+								<span class="material-symbols-outlined"> login </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zaloguj się</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Link do strony koszyka -->
+						<a href="/zegarmistrz/pages/cart.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol koszyka -->
+								<span class="material-symbols-outlined"> shopping_cart </span>
+							</div>
+							<!-- Ilość przedmiotów w koszyku -->
+							<span class="cart-quantity"></span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Koszyk</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Prrzycisk do wylogowania ze strony-->
+						<button class="nav-link-btn logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+						</button>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Przycisk przenoszący do menu -->
+						<button class="nav-group-menu nav-link-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol menu -->
+								<span class="material-symbols-outlined"> menu </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Menu</span>
+						</button>
+					</li>
+				</ul>
+
+				<!-- Lista rozwijanych linków nawigacyjnych widoczna na małych ekranach -->
+				<ul class="nav-links-dropdown">
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony serwisu -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony o nas-->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w rozwijanej liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link-dp nav-hidden">
+						<!-- Przycisk do wylogowania ze sklepu-->
+						<button class="nav-link-btn-dp logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon-dp">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Wyloguj się</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja zawierająca pokaz slajdów ze zdjęciami zegarków -->
+			<section class="hero swiper">
+				<!-- Kontener zawierający slajdy -->
+				<div class="swiper-wrapper">
+					<!-- Pojedyczny slajd -->
+					<div class="swiper-slide">
+						<!-- Zdjęcie widoczne na slajdzie -->
+						<img src="assets/hero/zegarek1.webp" alt="zegarek1" />
+					</div>
+					<!-- Pojedyczny slajd -->
+					<div class="swiper-slide">
+						<!-- Zdjęcie widoczne na slajdzie -->
+						<img src="assets/hero/zegarek2.webp" alt="zegarek2" />
+					</div>
+					<!-- Pojedyczny slajd -->
+					<div class="swiper-slide">
+						<!-- Zdjęcie widoczne na slajdzie -->
+						<img src="assets/hero/zegarek3.webp" alt="zegarek3" />
+					</div>
+					<!-- Pojedyczny slajd -->
+					<div class="swiper-slide">
+						<!-- Zdjęcie widoczne na slajdzie -->
+						<img src="assets/hero/zegarek4.webp" alt="zegarek4" />
+					</div>
+					<!-- Pojedyczny slajd -->
+					<div class="swiper-slide">
+						<!-- Zdjęcie widoczne na slajdzie -->
+						<img src="assets/hero/zegarek5.webp" alt="zegarek5" />
+					</div>
+				</div>
+				<!-- Element pozwalający na paginację pomiędzy slajdami -->
+				<div class="swiper-pagination"></div>
+			</section>
+			<!-- Odnośnik do źródła zdjęć -->
+			<a
+				href="https://unsplash.com/s/photos/watch"
+				target="_blank"
+				class="source"
+				rel="noopener noreferrer"
+				>Źródło zdjęć</a
+			>
+
+			<!-- Sekcja zachęcająca użytkownika do odwiedzenia sklepu -->
+			<section class="cta-container">
+				<!-- Nagłówek strony -->
+				<h1>Zegarki męskie</h1>
+
+				<!-- Artykuł z informacjami o zegarkach -->
+				<article>
+					<!-- Nagłówek artykułu -->
+					<h2>&#62; Na każdą kieszeń</h2>
+					<!-- Paragraf artykułu -->
+					<p>
+						Nasza kolekcja zegarków oferuje szeroki wybór modeli dopasowanych do
+						różnych potrzeb i preferencji, bez względu na budżet. Przekonaj się
+						sam i dołącz do grona naszych zadowolonych klientów już dziś!
+					</p>
+					<!-- Przycisk z linkiem na stronę sklepu -->
+					<a href="/zegarmistrz/pages/shop.html" class="btn btn-primary"
+						>Obejrzyj kolekcję
+						<!-- Ikona strzałki -->
+						<span class="material-symbols-outlined btn-arrow">
+							chevron_right
+						</span></a
+					>
+				</article>
+				<!-- Artykuł z informacjami o zegarkach -->
+				<article>
+					<!-- Nagłówek artykułu -->
+					<h2>&#62; Stylowe i eleganckie</h2>
+					<!-- Paragraf artykułu -->
+					<p>
+						Nieważne czy preferujesz klasyczną elegancję czy też nowoczesny
+						minimalizm, z pewnością znajdziesz u nas idealny zegarek, który
+						będzie dopełnieniem Twojego codziennego stylu.
+					</p>
+				</article>
+				<!-- Artykuł z informacjami o zegarkach -->
+				<article>
+					<!-- Nagłówek artykułu -->
+					<h2>&#62; Świetna jakość wykonania</h2>
+					<!-- Paragraf artykułu -->
+					<p>
+						Cenimy wysoką jakość naszych produktów oraz satysfakcję klienta
+						ponad wszystko. Dlatego każdy zegarek, który oferujemy, przechodzi
+						rygorystyczne testy jakości, aby zapewnić niezawodność i długotrwałą
+						satysfakcję.
+					</p>
+				</article>
+				<!-- Przycisk z linkiem na stronę sklepu -->
+				<a href="/zegarmistrz/pages/shop.html" class="btn btn-primary"
+					>Obejrzyj kolekcję
+					<!-- Ikona strzałki -->
+					<span class="material-symbols-outlined btn-arrow">
+						chevron_right
+					</span></a
+				>
+			</section>
+
+			<!-- Sekcja zawierająca listę popularnych marek zegarków -->
+			<section class="popular-brands">
+				<!-- Nagłówek sekcji -->
+				<h2>&#62; Popularne marki</h2>
+				<!-- Kontener zawierający popularne marki -->
+				<div class="brands-container">
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=adriatica">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/adriatica.webp"
+								alt="adriatica_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=tissot">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/tissot.webp"
+								alt="tissot_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=festina">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/festina.webp"
+								alt="festina_logo" />
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=citizen">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/citizen.webp"
+								alt="citizen_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=certina">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/certina.webp"
+								alt="certina_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=suunto">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/suunto.webp"
+								alt="suunto_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=timex">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/timex.webp"
+								alt="timex_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+					<!-- Kontener z logiem marki -->
+					<div class="img-container">
+						<!-- Odnośnik na stronę z informacjami o danej marce -->
+						<a href="/zegarmistrz/pages/company.html?brand=vostok%20europe">
+							<!-- Logo marki -->
+							<img
+								src="/zegarmistrz/assets/brands/vostok.webp"
+								alt="vostok_europe_logo" />
+							<!-- Przycisk wyświetlający użytkownikowi możliwość kliknięcia -->
+							<span class="show-more">Zobacz więcej</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Sekcja zajmująca całą szerokość ekranu -->
+			<section class="wide-section">
+				<!-- Artykuł z newsletterem -->
+				<article class="newsletter">
+					<!-- Kontener -->
+					<div class="container">
+						<!-- Nagłówek artykułu -->
+						<h2>&#62; Zapisz się do newslettera</h2>
+						<!-- Paragraf artykułu -->
+						<p>
+							Bądź na bieżąco ze wszystkimi konkursami promocjami i nowościami.
+						</p>
+						<!-- Pole pozwalające na wpisanie adresu email w celu subskrypcji newslettera, zawiera ograniczenia takie jak (typ email, wymagane, schemat), a także podpowiedź -->
+						<input
+							class="custom-input"
+							type="email"
+							id="email"
+							name="email"
+							required
+							title="Podaj adres email w formacie typu jan@kowalski.com"
+							pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+							placeholder="Twój adres email..." />
+						<!-- Element wyświetlający błąd związany z wpisanym adresem email -->
+						<p class="error-email error"></p>
+						<!-- Przycisk pozwalający na subskrypcję newslettera -->
+						<button class="newsletter-subscribe btn btn-secondary">
+							Zapisz się
+						</button>
+					</div>
+
+					<!-- Zdjęcie newslettera -->
+					<div class="newsletter-img">
+						<img
+							src="/zegarmistrz/assets/newsletter.svg"
+							alt="newsletter-image" />
+						<!-- Odnośnik do źródła zdjęć -->
+						<a
+							href="https://undraw.co/illustrations"
+							target="_blank"
+							class="source"
+							rel="noopener noreferrer"
+							>Źródło zdjęcia</a
+						>
+					</div>
+				</article>
+
+				<!-- Artykuł z ofertą firmy -->
+				<article class="offers-container">
+					<!-- Nagłówek artykułu -->
+					<h2>&#62; Oferujemy</h2>
+					<!-- Kontener z ofertą -->
+					<div class="offer">
+						<!-- Ikona oferty -->
+						<span class="btn-nav-offer material-symbols-outlined">
+							local_shipping
+						</span>
+						<!-- Tekst oferty -->
+						<div class="offer-text">
+							<h3>Darmowa dostawa</h3>
+							<p>Dla każdego zegarka</p>
+						</div>
+					</div>
+					<!-- Kontener z ofertą -->
+					<div class="offer">
+						<!-- Ikona oferty -->
+						<span class="btn-nav-offer material-symbols-outlined"> undo </span>
+						<!-- Tekst oferty -->
+						<div class="offer-text">
+							<h3>Darmowy zwrot</h3>
+							<p>Aż do 30 dni od zakupu</p>
+						</div>
+					</div>
+					<!-- Kontener z ofertą -->
+					<div class="offer">
+						<!-- Ikona oferty -->
+						<span class="btn-nav-offer material-symbols-outlined">
+							package_2
+						</span>
+						<!-- Tekst oferty -->
+						<div class="offer-text">
+							<h3>Wysyłka w 24h</h3>
+							<p>Dostawa na drugi dzień</p>
+						</div>
+					</div>
+					<!-- Kontener z ofertą -->
+					<div class="offer">
+						<!-- Ikona oferty -->
+						<span class="btn-nav-offer material-symbols-outlined">
+							location_on
+						</span>
+						<!-- Tekst oferty -->
+						<div class="offer-text">
+							<h3>Salon w Lublinie</h3>
+							<p>Odbiór osobisty</p>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<!-- Sekcja z zegarkami -->
+			<section class="watches">
+				<!-- Nagłówek sekcji -->
+				<h2>&#62; Bądź na bieżąco na całym świecie</h2>
+
+				<!-- Kontener zawierający pola potrzebne do dodawania nowych zegarków -->
+				<div class="watch-container-empty">
+					<!-- Etykieta dla strefy czasowej -->
+					<label for="timezone">Wybierz strefę czasową:</label>
+					<!-- Pole wyboru strefy czasowej, domyślnie ustawiony Środkowo Europejski  -->
+					<select id="timezone">
+						<option value="Pacific/Midway">(GMT-11:00) Samoa (Midway)</option>
+						<option value="Pacific/Honolulu">
+							(GMT-10:00) Hawaje (Honolulu)
+						</option>
+						<option value="America/Anchorage">
+							(GMT-09:00) Alaska (Anchorage)
+						</option>
+						<option value="America/Los_Angeles">
+							(GMT-08:00) Pacyficzny (Los Angeles)
+						</option>
+						<option value="America/Denver">(GMT-07:00) Górski (Denver)</option>
+						<option value="America/Chicago">
+							(GMT-06:00) Środkowy (Chicago)
+						</option>
+						<option value="America/New_York">
+							(GMT-05:00) Wschodni (Nowy Jork)
+						</option>
+						<option value="America/Caracas">(GMT-04:30) Caracas</option>
+						<option value="America/Halifax">
+							(GMT-04:00) Atlantic (Halifax)
+						</option>
+						<option value="America/St_Johns">
+							(GMT-03:30) Newfoundland (St. John's)
+						</option>
+						<option value="America/Argentina/Buenos_Aires">
+							(GMT-03:00) Buenos Aires
+						</option>
+						<option value="America/Sao_Paulo">
+							(GMT-03:00) Brazylia (Sao Paulo)
+						</option>
+						<option value="Atlantic/South_Georgia">
+							(GMT-02:00) Georgia Południowa (South Georgia)
+						</option>
+						<option value="Atlantic/Azores">(GMT-01:00) Azory (Azores)</option>
+						<option value="Atlantic/Cape_Verde">
+							(GMT-01:00) Zielony Przylądek (Cape Verde)
+						</option>
+						<option value="Europe/London">
+							(GMT+00:00) W. Europe (Londyn)
+						</option>
+						<option selected value="Europe/Amsterdam">
+							(GMT+01:00) Środkowo Europejski (Lublin)
+						</option>
+						<option value="Europe/Athens">
+							(GMT+02:00) Wschodnio Europejski (Ateny)
+						</option>
+						<option value="Asia/Riyadh">(GMT+03:00) Arabia (Rijad)</option>
+						<option value="Asia/Baghdad">(GMT+03:00) Irak (Bagdad)</option>
+						<option value="Asia/Tehran">(GMT+03:30) Iran (Teheran)</option>
+						<option value="Asia/Dubai">(GMT+04:00) Zatoka (Dubaj)</option>
+						<option value="Asia/Baku">(GMT+04:00) Baku</option>
+						<option value="Asia/Kabul">(GMT+04:30) Afganistan (Kabul)</option>
+						<option value="Asia/Yekaterinburg">
+							(GMT+05:00) Jekaterynburg
+						</option>
+						<option value="Asia/Karachi">
+							(GMT+05:00) Islamabad (Karaczi)
+						</option>
+						<option value="Asia/Kolkata">(GMT+05:30) Indie (Kolkata)</option>
+						<option value="Asia/Kathmandu">(GMT+05:45) Nepal (Katmandu)</option>
+						<option value="Asia/Dhaka">(GMT+06:00) Bangladesz (Dhaka)</option>
+						<option value="Asia/Colombo">
+							(GMT+05:30) Sri Lanka (Kolombo)
+						</option>
+						<option value="Asia/Almaty">(GMT+06:00) Almaty</option>
+						<option value="Asia/Rangoon">(GMT+06:30) Myanmar (Rangun)</option>
+						<option value="Asia/Bangkok">
+							(GMT+07:00) Indochina (Bangkok)
+						</option>
+						<option value="Asia/Hong_Kong">(GMT+08:00) Hong Kong</option>
+						<option value="Asia/Krasnoyarsk">(GMT+07:00) Krasnojarsk</option>
+						<option value="Asia/Tokyo">(GMT+09:00) Japonia (Tokio)</option>
+						<option value="Australia/Adelaide">
+							(GMT+09:30) Centralna Australia (Adelaide)
+						</option>
+						<option value="Australia/Brisbane">
+							(GMT+10:00) Wschodnia Australia (Brisbane)
+						</option>
+						<option value="Australia/Sydney">(GMT+10:00) Sydney</option>
+						<option value="Pacific/Guam">(GMT+10:00) Guam</option>
+						<option value="Australia/Lord_Howe">(GMT+10:30) Lord Howe</option>
+						<option value="Pacific/Fiji">(GMT+12:00) Fidżi (Fidżi)</option>
+						<option value="Pacific/Auckland">
+							(GMT+12:00) Nowa Zelandia (Auckland)
+						</option>
+					</select>
+					<!-- Etykieta dla nazwy miasta -->
+					<label for="city">Nazwa miasta:</label>
+					<!-- Pole z nazwą miasta zawierające ograniczenia wprowadzenia danych (typ tekstowy, minimalna, maksymalna długość, wymagane, schemat), a także podpowiedź -->
+					<input
+						class="custom-input"
+						required
+						pattern="[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż][A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż ]{2,31}"
+						minlength="3"
+						maxlength="32"
+						type="text"
+						id="city"
+						placeholder="Wpisz nazwę miasta..." />
+					<!-- Element wyświetlający błąd związany z walidacją wpisanego pola z nazwą miasta -->
+					<div class="city-error error"></div>
+					<!-- Przycisk pozwalający na dodanie zegarka -->
+					<button class="add-watch btn btn-primary">Dodaj zegarek</button>
+				</div>
+				<!-- Kontenery z zegarkami tworzone są dynamicznie -->
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+
+		<!-- Skrypt obsługujący działanie slajdów z wykorzystaniem biblioteki Swiper.js -->
+		<script type="module">
+			// Dołączenie biblioteki Swiper.js za pomocą CDN. Swiper.js jest bardzo popularną biblioteką do tworzenia responsywnych karuzel slajdów w aplikacjach internetowych. Źródło: https://swiperjs.com/
+			import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+			// Inicjalizacja obiektu Swiper z dodanej biblioteki Swiper.js
+			const swiper = new Swiper(".swiper", {
+				// Dodanie opcjonalnych parametrów opisanych na stronie biblioteki Swiper.js
+
+				direction: "horizontal", // Kierunek przewijania slajdów (poziomy)
+				loop: true, // Zapętlanie slajdów
+				effect: "coverflow", // Efekt przejścia między slajdami (coverflow)
+				centeredSlides: true, // Wyśrodkowanie slajdów
+				slidesPerView: "auto", // Automatycznie dostosowuje ilość slajdów do szerokości kontenera
+
+				// Dodanie paginacji
+				pagination: {
+					el: ".swiper-pagination", // Element odpowiadający za paginację
+					clickable: true, // Możliwość klikania na paginacji w celu zmiany slajdu
+				},
+
+				// Automatyczne odtwarzanie slajdów
+				autoplay: {
+					delay: 3000, // Opóźnienie między automatycznymi przewijaniami slajdów (3000 ms = 3 sekundy)
+					disableOnInteraction: false, // Wyłączenie opcji automatycznego przewijania slajdów po interakcji użytkownika
+				},
+			});
+		</script>
+	</body>
+</html>

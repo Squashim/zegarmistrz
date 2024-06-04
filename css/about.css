@@ -1,0 +1,148 @@
+/* Style stylizujące elementy na stronie about.html */
+
+/* styl dla sekcji zawierającej kontener kontaktowy */
+section:has(.contact-container) {
+	max-width: unset; /* resetowanie maksymalnej szerokości */
+}
+/* styl dla paragrafów w artykule */
+article p {
+	text-align: justify; /* wyrównanie tekstu do lewej i prawej strony */
+}
+/* styl dla nagłówka h3 w sekcji kontaktowej i adresie */
+.contact h3,
+.address h3 {
+	color: var(--secondary100); /* kolor tekstu */
+	letter-spacing: 1px; /* odstępy między literami */
+}
+/* styl dla kontenera zawierającego kontakt i adres do firmy */
+.contact,
+.address {
+	display: flex; /* ustawienie elementów jako flexbox */
+	flex-direction: column; /* układ elementów w kolumnie */
+	gap: 0.5rem; /* odstęp między elementami */
+	margin: 1.2rem 0; /* marginesy */
+	align-items: center; /* wyrównanie elementów do środka */
+}
+/* styl dla kontenera mapy */
+.map-container {
+	position: relative; /* ustawienie pozycji jako względna */
+	width: 100%; /* szerokość 100% */
+	aspect-ratio: 16/9; /* proporcje 16:9 */
+}
+/* styl dla mapy w kontenerze */
+.map-container iframe {
+	position: absolute; /* ustawienie pozycji jako absolutna */
+	top: 0; /* odległość od góry */
+	left: 0; /* odległość od lewej strony */
+	width: 100%; /* szerokość 100% */
+	height: 100%; /* wysokość 100% */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla głównej sekcji i kontenera kontaktowego */
+	section,
+	.contact-container {
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 768px */
+@media screen and (min-width: 768px) {
+	/* styl dla kontenera informacyjnego */
+	.information {
+		grid-column: span 2; /* zajęcie dwóch kolumn */
+	}
+	/* styl dla kontenera kontaktowego */
+	.contact-container {
+		display: grid; /* ustawienie kontenera jako siatki */
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* dwie kolumny o takiej samej szerokości */
+	}
+	/* ukrycie linii poziomej odzielającej elementy w kontenerze kontaktowym */
+	.contact-container hr {
+		display: none; /* ukrycie linii */
+	}
+	/* styl dla kontenera mapy */
+	.map-container {
+		grid-column: span 2; /* zajęcie dwóch kolumn */
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 2rem auto; /* marginesy */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla sekcji i kontenera kontaktowego */
+	section,
+	.contact-container {
+		max-width: 80vw; /* maksymalna szerokość */
+	}
+	/* styl dla paragrafów w artykule */
+	section article > p {
+		padding: 1.2rem 0; /* wewnętrzny odstęp */
+		font-size: 1.8rem; /* rozmiar czcionki */
+	}
+	/* styl dla kontenerów kontaktowych, adresu i informacji */
+	.contact,
+	.address,
+	.information {
+		font-size: 1.8rem; /* rozmiar czcionki */
+	}
+	/* styl dla nagłówka h1 w kontenerze z informacjami o firmie */
+	.about-container h1 {
+		grid-column: span 2; /* zajęcie dwóch kolumn */
+	}
+	/* styl dla kontenera z informacjami o firmie */
+	.about-container {
+		display: grid; /* ustawienie kontenera jako siatki */
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* dwie kolumny o tej samej szerokości */
+		gap: 1rem 4rem; /* odstęp między elementami */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1444px */
+@media screen and (min-width: 1444px) {
+	/* styl dla kontenera informacyjnego */
+	.information {
+		grid-column: span 3; /* zajęcie trzech kolumn */
+		max-width: 90rem; /* maksymalna szerokość */
+	}
+	/* styl dla kontenera kontaktowego */
+	.contact-container {
+		grid-template-columns: 1fr 2fr 1fr; /* trzy kolumny / 1 */
+		align-items: center; /* wyrównanie elementów do środka */
+	}
+	/* styl dla kontenera mapy */
+	.map-container {
+		grid-column: span 1; /* zajęcie jednej kolumny */
+		grid-column: 2 / 3; /* pozycja kolumn w siatce / od 2 do 3 kolumny (zajmuje środkową kolumnę)*/
+		grid-row: 2 / 3; /* pozycja wierszy w siatce / od 2 do 3 wiersza (dolny wiersz) */
+		max-width: 100%; /* maksymalna szerokość */
+	}
+	/* styl dla nagłówka h1 w kontenerze z informacjami o firmie */
+	.about-container h1 {
+		grid-column: span 4; /* zajęcie czterech kolumn */
+	}
+	/* styl dla kontenera z informacjami o firmie */
+	.about-container {
+		grid-template-columns: repeat(
+			4,
+			1fr
+		); /* cztery kolumny o tej samej szerokości */
+		gap: 4rem; /* odstęp między elementami */
+	}
+	/* styl dla kontenerów kontaktowych i adresu */
+	.contact,
+	.address {
+		padding: 1rem 0; /* wewnętrzny odstęp góra/dół */
+		border-top: 2px solid var(--secondary100); /* górna krawędź */
+		border-bottom: 2px solid var(--secondary100); /* dolna krawędź */
+	}
+}

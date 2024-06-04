@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - koszyk</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie stylu dla strony cart.html -->
+		<link rel="stylesheet" href="../css/cart.css" />
+		<!-- Dołączenie do strony pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+		<!-- Dołączanie skryptów jako modułów, obsługujących stronę cart.html, a także obsługujące stopkę i nawigację. -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="../js/handleNav.js"></script>
+		<script type="module" src="../js/handleFooter.js"></script>
+		<script type="module" src="../js/pages/cart.js"></script>
+	</head>
+	<body>
+		<!-- Okno dialogowe wyświetlające komunikat o zakupie produktu -->
+		<dialog class="dialog-purchase">
+			<!-- Zawartość okna dialogowego -->
+			<div class="dialog-container">
+				<!-- Nagłówek okna dialogowego -->
+				<h2>Czy na pewno chcesz kupić produkty znajdujące się w koszyku?</h2>
+				<!-- Nagłówek okna dialogowego wyświetlający cenę koszyka -->
+				<h3>Kwota całkowita: <span class="dialog-sum-price"></span></h3>
+				<!-- Kontener z przyciskami -->
+				<div class="buttons">
+					<!-- Przycisk kupienia produktów -->
+					<a href="/zegarmistrz/index.html" class="btn btn-secondary buy-btn">
+						Kup produkty
+					</a>
+					<!-- Przycisk anulowania zakupu -->
+					<button class="btn btn-li cancel-buy-btn">Anuluj</button>
+				</div>
+			</div>
+		</dialog>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Nawigacja -->
+			<nav>
+				<!-- Link do strony głównej z logo -->
+				<a href="/zegarmistrz/index.html" class="logo">
+					<!-- Logo strony -->
+					<img src="../assets/logo_white.png" alt="logo" />
+				</a>
+				<!-- Lista głównych linków nawigacyjnych -->
+				<ul class="nav-links">
+					<!-- Pozycja w liście -->
+					<li class="nav-link">
+						<!-- Link do strony głównej -->
+						<a href="/zegarmistrz/index.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol domu -->
+								<span class="material-symbols-outlined"> home </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Strona główna</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony serwisowej -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony o nas -->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link" id="nav-login">
+						<!-- Link do strony logowania -->
+						<a href="/zegarmistrz/pages/login.html" class="nav-link-btn">
+							<!-- Ikona logowania-->
+							<div class="nav-link-icon">
+								<!-- Symbol logowania -->
+								<span class="material-symbols-outlined"> login </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zaloguj się</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Link do strony koszyka -->
+						<a href="/zegarmistrz/pages/cart.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol koszyka -->
+								<span class="material-symbols-outlined"> shopping_cart </span>
+							</div>
+							<!-- Ilość przedmiotów w koszyku -->
+							<span class="cart-quantity"></span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Koszyk</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Prrzycisk do wylogowania ze strony-->
+						<button class="nav-link-btn logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+						</button>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Przycisk przenoszący do menu -->
+						<button class="nav-group-menu nav-link-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol menu -->
+								<span class="material-symbols-outlined"> menu </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Menu</span>
+						</button>
+					</li>
+				</ul>
+
+				<!-- Lista rozwijanych linków nawigacyjnych widoczna na małych ekranach -->
+				<ul class="nav-links-dropdown">
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony serwisu -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony o nas-->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w rozwijanej liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link-dp nav-hidden">
+						<!-- Przycisk do wylogowania ze sklepu-->
+						<button class="nav-link-btn-dp logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon-dp">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Wyloguj się</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja zawierająca koszyk -->
+			<section class="cart-container">
+				<!-- Górny pasek koszyka -->
+				<div class="cart-topbar">
+					<!-- Przycisk do cofania na stronę sklepu -->
+					<a href="/zegarmistrz/pages/shop.html">
+						<!-- Ikona powrotu -->
+						<span class="btn-user material-symbols-outlined"> arrow_back </span>
+						<!-- Tekst przycisku -->
+						<span class="span-text">Wróć do zakupów</span>
+					</a>
+					<!-- Przycisk do czyszczenia zawartości koszyka, tworzony dynamicznie -->
+				</div>
+				<!-- Nagłówek strony -->
+				<h1>Twój koszyk</h1>
+
+				<!-- Zawartość koszyka generowana dynamicznie -->
+				<article class="cart-content"></article>
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

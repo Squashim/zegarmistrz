@@ -1,0 +1,40 @@
+/* Style stylizujące elementy na stronie login.html */
+
+/* styl dla formularza logowania */
+form {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	gap: 0.4rem; /* odstęp między elementami 4px */
+}
+/* styl dla etykiet w formularzu logowania */
+form label {
+	font-size: 1.8rem; /* wielkość tekstu 18px */
+}
+/* styl dla nagłówków h2, h3 w kontenerze zawierającym formularz logowania */
+.login-container h3,
+.login-container h2 {
+	text-align: center; /* wyśrodkowanie tekstu */
+	margin: 0.5rem 0; /* margines górny i dolny 5px, margines lewy i prawy 0 */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla kontenera zawierającego formularz logowania */
+	.login-container {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 0 auto; /* automatyczne wyśrodkowanie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla głównego kontenera na stronie */
+	main {
+		background: linear-gradient(
+			90deg,
+			var(--black800) 5%,
+			var(--black500),
+			var(--black800) 95%
+		); /* tło gradientowe, kąt 90 stopni, 3 kolory */
+	}
+}

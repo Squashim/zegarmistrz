@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - rejestracja</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony register.html -->
+		<link rel="stylesheet" href="../css/register.css" />
+		<!-- Dołączenie do strony pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+		<!-- Dołączanie skryptów jako modułów, obsługujących stronę register.html, a także obsługujące stopkę. -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="../js/pages/register.js"></script>
+		<script type="module" src="../js/handleFooter.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Logo strony wraz z przekierowaniem na główną stronę po kliknięciu-->
+			<a href="/zegarmistrz/index.html" class="logo">
+				<img src="../assets/logo_white.png" alt="logo" />
+			</a>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Kontener dla sekcji rejestracji -->
+			<section class="register-container">
+				<!-- Nagłówek sekcji -->
+				<h1>Rejestracja użytkownika</h1>
+				<!-- Artykuł zawierający rejestrację -->
+				<article>
+					<!-- Formularz rejestracji zawierający atrybut novalidate, ponieważ walidacja jest przeprowadzana w JS -->
+					<form id="form" novalidate>
+						<!-- Pole wyboru tytułu użytkownika -->
+						<fieldset>
+							<!-- Nazwa pola wyboru tytułu -->
+							<legend>Tytuł*</legend>
+							<!-- Grupa przycisków wyboru tytułu -->
+							<div class="input-group">
+								<!-- Przycisk wyboru tytułu "Pan" zaznaczony domyślnie -->
+								<input
+									type="radio"
+									id="male"
+									name="title"
+									value="male"
+									checked />
+								<label for="male">Pan</label>
+							</div>
+							<!-- Grupa przycisków wyboru tytułu -->
+							<div class="input-group">
+								<!-- Przycisk wyboru tytułu "Pani" -->
+								<input type="radio" id="female" name="title" value="female" />
+								<label for="female">Pani</label>
+							</div>
+							<!-- Grupa przycisków wyboru tytułu -->
+							<div class="input-group">
+								<!-- Przycisk wyboru innego tytułu -->
+								<input type="radio" id="other" name="title" value="other" />
+								<label for="other">Inny</label>
+							</div>
+						</fieldset>
+
+						<!-- Pole wprowadzania imienia-->
+						<label for="name">Imię*</label>
+						<!-- Pole formularza z imieniem zawierające ograniczenia wprowadzenia danych (typ tekstowy, minimalna, maksymalna długość, wymagane, schemat), a także podpowiedź -->
+						<input
+							type="text"
+							class="custom-input"
+							id="name"
+							name="name"
+							placeholder="Podaj swoje imię..."
+							pattern="[A-Za-z ]{3,32}"
+							minlength="3"
+							maxlength="32"
+							title="Podaj imię bez cyfr i znaków specjalnych. Minimum 3 znaki, maksymalnie 32 znaki."
+							required />
+						<!-- Komunikat o błędzie dla pola imienia -->
+						<p class="error-name error"></p>
+
+						<!-- Pole wprowadzania adresu email -->
+						<label for="email">Email*</label>
+						<!-- Pole formularza z emailem zawierające ograniczenia wprowadzenia danych (typ email, wymagane, schemat), a także podpowiedź -->
+						<input
+							type="email"
+							class="custom-input"
+							id="email"
+							name="email"
+							required
+							title="Podaj adres email w formacie typu jan@kowalski.com"
+							pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+							placeholder="Wpisz adres email..." />
+						<!-- Komunikat o błędzie dla pola email -->
+						<p class="error-email error"></p>
+
+						<!-- Pole wprowadzania numeru telefonu -->
+						<label for="phone">Telefon*</label>
+						<!-- Pole formularza z numerem telefonu zawierające ograniczenia wprowadzenia danych (typ telefon, wymagane, schemat), a także podpowiedź -->
+						<input
+							type="tel"
+							class="custom-input"
+							id="phone"
+							name="phone"
+							required
+							pattern="[0-9]{9}"
+							placeholder="Podaj numer telefonu..."
+							title="Numer telefonu musi mieć 9 cyfr bez spacji i znaków specjalnych" />
+						<!-- Komunikat o błędzie dla pola telefonu -->
+						<p class="error-phone error"></p>
+
+						<!-- Pole wyboru kraju zamieszkania -->
+						<label for="country">Kraj zamieszkania*</label>
+						<select name="country" id="country">
+							<option value="poland">Polska</option>
+							<option value="france">Francja</option>
+							<option value="uk">Wielka Brytania</option>
+							<option value="germany">Niemcy</option>
+							<option value="italy">Włochy</option>
+							<option value="spain">Hiszpania</option>
+							<option value="usa">Stany Zjednoczone</option>
+							<option value="other">Inny</option>
+						</select>
+
+						<!-- Pole wprowadzania wieku -->
+						<label for="age">Wiek (opcjonalnie)</label>
+						<!-- Pole formularza z wiekiem zawierające ograniczenia wprowadzenia danych (typ numeryczny, minimalna, maksymalna liczba), a także podpowiedź -->
+						<input
+							type="number"
+							class="custom-input"
+							id="age"
+							name="age"
+							min="18"
+							max="99"
+							placeholder="Podaj wiek..."
+							title="Podaj swój wiek w latach(opcjonalnie)." />
+						<!-- Komunikat o błędzie dla pola wieku -->
+						<p class="error-age error"></p>
+
+						<!-- Pole wprowadzania hasła -->
+						<label for="password">Hasło*</label>
+						<!-- Pole formularza z hasłem zawierające ograniczenia wprowadzenia danych (typ hasło, minimalna, maksymalna długość, wymagane, schemat), a także podpowiedź -->
+						<input
+							type="password"
+							class="custom-input"
+							id="password"
+							name="password"
+							placeholder="Wpisz swoje hasło..."
+							minlength="8"
+							maxlength="32"
+							required
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Hasło musi mieć minimum 8 znaków i zawierać przynajmniej jedną cyfrę oraz małą i dużą literę" />
+						<!-- Komunikat o błędzie dla pola hasła -->
+						<p class="error-passw error"></p>
+
+						<!-- Pole wprowadzania potwierdzenia hasła -->
+						<label for="passw_conf">Potwierdź hasło*</label>
+						<!-- Pole formularza z powtórzeniem hasła zawierające ograniczenia wprowadzenia danych (typ hasło, minimalna, maksymalna długość, wymagane, schemat), a także podpowiedź -->
+						<input
+							type="password"
+							class="custom-input"
+							id="passw_conf"
+							name="passw_conf"
+							minlength="8"
+							maxlength="32"
+							required
+							placeholder="Powtórz swoje hasło..."
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Wpisz ponownie swoje hasło..." />
+						<!-- Komunikat o błędzie dla pola potwierdzenia hasła -->
+						<p class="error-passw_conf error"></p>
+
+						<!-- Kontener dla opcji akceptacji regulaminu i subskrypcji -->
+						<div class="checkbox-container">
+							<!-- Grupa opcji akceptacji regulaminu -->
+							<div class="input-group">
+								<!-- Pole wyboru akceptacji regulaminu, wymagane -->
+								<input type="checkbox" id="policy" name="policy" required />
+								<!-- Etykieta dla pola akceptacji regulaminu -->
+								<label for="policy">*Akceptuję politykę prywatności</label>
+							</div>
+							<!-- Komunikat o błędzie dla pola akceptacji regulaminu -->
+							<p class="error-policy error"></p>
+							<!-- Grupa opcji subskrypcji newslettera -->
+							<div class="input-group">
+								<!-- Pole wyboru subskrypcji newslettera -->
+								<input type="checkbox" id="newsletter" name="newsletter" />
+								<!-- Etykieta dla pola subskrypcji newslettera -->
+								<label for="newsletter"
+									>Chcę otrzymywać powiadomienia dotyczące nowych ofert</label
+								>
+							</div>
+						</div>
+						<!-- Przycisk do utworzenia konta -->
+						<button class="btn btn-primary" type="submit" id="submit_btn">
+							Utwórz konto
+						</button>
+					</form>
+				</article>
+				<!-- Pozioma linia podziału -->
+				<span class="divider">lub</span>
+				<!-- Artykuł zawierjący przejście do logowania -->
+				<article class="back-login">
+					<!-- Nagłówek artykułu -->
+					<h2>Masz już konto?</h2>
+					<!-- Przycisk do przekierowania na stronę logowania -->
+					<a class="btn btn-secondary" href="/zegarmistrz/pages/login.html"
+						>Zaloguj się</a
+					>
+				</article>
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

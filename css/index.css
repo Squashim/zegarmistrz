@@ -1,0 +1,608 @@
+/* Style stylizujące elementy na stronie index.html *
+
+/* Style dla pierwszej sekcji strony - początek */
+/* styl dla zdjęcia będącego slajdem */
+.swiper-slide img {
+	max-width: 100%; /* maksymalna szerokość obrazu */
+}
+/* styl dla aktywnych kropek paginacji */
+.swiper-pagination-bullet-active {
+	background-color: var(
+		--primary100
+	) !important; /* kolor aktywnej kropki paginacji */
+}
+
+/* Style dla pierwszej sekcji strony - koniec */
+
+/* Style dla drugiej sekcji strony - początek */
+/* styl dla kontenera zachęcającego użytkownika do kupna */
+.cta-container {
+	display: grid; /* wyświetlanie jako siatka */
+	grid-template-columns: 1fr; /* jedna kolumna */
+}
+/* ukrycie niektórych artykułów w kontenerze zachęcającym użytkownika do kupna */
+.cta-container article:nth-of-type(2),
+.cta-container article:nth-of-type(3) {
+	display: none; /* ukrycie niektórych artykułów */
+}
+/* ukrycie przycisku będącego widocznego tylko na większych ekranach */
+.cta-container > a {
+	display: none; /* ukrycie przycisku */
+}
+/* styl dla nagłówka h2 w kontenerze zachęcającym użytkownika do kupna */
+.cta-container h2 {
+	margin-top: 1.8rem; /* górny margines */
+}
+/* styl dla paragrafu w kontenerze zachęcającym użytkownika do kupna */
+.cta-container p {
+	text-align: justify; /* wyrównanie tekstu do lewej */
+}
+/* Style dla drugiej sekcji strony - koniec */
+
+/* Style dla trzeciej sekcji strony - start */
+/* styl dla kontenera zawierającego marki zegarków */
+.brands-container {
+	display: grid; /* Wyświetlanie jako siatka */
+	grid-template-columns: repeat(
+		2,
+		1fr
+	); /* dwie kolumny o tej samej szerokości */
+	gap: 2rem; /* odstęp między elementami */
+}
+/* styl dla kontenera zawierającego zdjęcia loga mark zegarków */
+.img-container {
+	transition: all ease 0.8s; /* efekt przejścia */
+	overflow-y: hidden; /* ukrywanie przepełnienia w osi pionowej */
+	position: relative; /* pozycja relatywna */
+}
+/* styl dla przycisku pokaż więcej o danej marce */
+.img-container .show-more {
+	visibility: hidden; /* ukrycie elementu */
+	transition: all ease-in-out 0.2s; /* efekt przejścia */
+	position: absolute; /* pozycja absolutna */
+	text-align: center; /* wyrównanie tekstu do środka */
+	width: 100%; /* szerokość 100% */
+	top: 0%; /* górna krawędź */
+	left: 50%; /* lewa krawędź */
+	transform: translate(-50%, -50%); /* przesunięcie o 50% w lewo i w górę */
+	background-color: var(--secondary100); /* kolor tła */
+	color: var(--black700); /* kolor tekstu */
+	max-width: 70%; /* maksymalna szerokość */
+	padding: 0.2rem; /* wewnętrzny odstęp */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+}
+/* styl dla przycisku pokaż więcej po najechaniu na logo marki */
+.img-container:hover .show-more {
+	visibility: visible; /* wyświetlenie elementu */
+	top: 50%; /* ustawienie na środku */
+}
+/* styl po najechaniu na logo marki */
+.img-container:hover {
+	transform: scale(1.1); /* powiększenie obrazu */
+}
+/* styl dla zdjęcia marki po najechaniu na nie */
+.img-container:hover img {
+	transform: translate(0, 10rem); /* przesunięcie w dół */
+}
+/* styl dla zdjęcia marki */
+.img-container img {
+	transition: all ease 0.5s; /* płynne przejście */
+	max-width: 100%; /* maksymalna szerokość */
+	margin: auto; /* wyśrodkowanie */
+	filter: grayscale(1) invert(1); /* przekształcenie obrazu - skala szarości i odwrócenie kolorów */
+}
+/* styl dla odnośnika w zdjęciu marki */
+.img-container a {
+	display: flex; /* wyświetlenie jako flexbox */
+	padding: 1rem; /* wewnętrzny odstęp */
+}
+/* Style dla trzeciej sekcji strony - koniec */
+
+/* Style dla czwartej sekcji strony - początek */
+/* styl dla kontenera z newsletterem */
+.newsletter {
+	display: flex; /* wyświetlenie jako flexbox */
+	flex-direction: column; /* ułożenie w kolumnie */
+	justify-content: space-between; /* rozłożenie elementów w pionie */
+	align-items: center; /* wyrównanie elementów w poziomie */
+}
+/* styl dla zdjęcia newslettera */
+.newsletter-img img {
+	width: 26rem; /* szerokość obrazu */
+}
+/* styl dla pola input newslettera */
+.newsletter input {
+	margin-top: 1.8rem; /* górny margines */
+}
+/* styl dla kontenera z ofertą firmy */
+.offers-container {
+	margin-top: 2rem; /* górny margines */
+	display: grid; /* wyświetlenie jako siatka */
+	grid-template-columns: 1fr; /* jedna kolumna */
+	gap: 1.2rem; /* odstęp między elementami */
+}
+/* styl dla pojedynczej oferty firmy */
+.offer {
+	display: flex; /* wyświetlenie jako flexbox */
+	align-items: center; /* wyrównanie elementów w pionie */
+	gap: 1.2rem; /* odstęp między elementami */
+}
+/* styl dla nagłówka tekstu oferty firmy */
+.offer-text h3 {
+	letter-spacing: 1px; /* Odstęp między literami */
+}
+/* Style dla czwartej sekcji strony - koniec */
+
+/* Style dla piątej sekcji strony - początek */
+/* styl dla kontenera z zegarkami */
+.watches {
+	max-width: 55rem; /* maksymalna szerokość */
+	margin: 0 auto; /* ustawienie marginesu na auto poziomo */
+	display: flex; /* ustawienie kontenera zegarków na flexbox */
+	flex-direction: column; /* ustawienie kierunku flexbox na kolumnę */
+}
+/* styl dla nagłówka h2 w w kontenerze z zegarkami */
+.watches h2 {
+	text-align: center; /* wyśrodkowanie tytułu */
+}
+/* styl dla kontenera zawierającego formularz dodawania nowego zegarka */
+.watch-container-empty {
+	display: flex; /* ustawienie pustego kontenera zegarka na flexbox */
+	flex-direction: column; /* ustawienie kierunku flexbox na kolumnę */
+	margin: 2rem auto; /* ustawienie marginesu */
+	gap: 1.2rem; /* odstęp między elementami wewnątrz kontenera */
+	padding: 4rem; /* wewnętrzny margines */
+	border-radius: 2rem; /* promień zaokrąglenia */
+	width: 100%; /* Szerokość */
+	border: 5px dashed var(--black700); /* styl obramowania */
+	order: -1; /* kolejność w kontenerze jako pierwsza */
+}
+/* styl dla etykiety kontenera zawierającego formularz dodawania nowego zegarka */
+.watch-container-empty label {
+	font-size: 1.8rem; /* rozmiar czcionki etykiety */
+}
+/* styl dla listy wyboru w formularzu dodawania nowego zegarka */
+select {
+	outline: none; /* brak obrysu */
+	border: 1px solid var(--black800); /* obramowanie 1px solid w kolorze czarnym */
+	font-size: 1.8rem; /* wielkość tekstu 18px */
+	padding: 0.8rem 1.2rem; /* wewnętrzny odstęp 8px na górze i na dole, 12px po lewej i po prawej */
+	border-right: 1.2rem solid transparent; /* prawe obramowanie 12px solid w kolorze przeźroczystm */
+}
+/* styl dla pojemnika z zegarkiem */
+.watch-container {
+	display: flex; /* ustawienie kontenera zegarka na flexbox */
+	flex-direction: column; /* ustawienie kierunku flexbox na kolumnę */
+	margin: 4rem auto; /* margines */
+	padding: 1.2rem; /* wewnętrzny margines */
+	min-height: 33rem; /* minimalna wysokość */
+	position: relative; /* pozycja */
+	width: 100%; /* szerokość */
+}
+/* styl dla kontenera tekstu w pojemniku z zegarkiem */
+.watch-container .watch-text {
+	display: grid; /* ustawienie kontenera na tryb siatki */
+	grid-template-columns: repeat(
+		3,
+		1fr
+	); /* trzy kolumny o tej samej szerokości */
+	align-items: center; /* wyrównanie elementów */
+	z-index: 3; /* indeks warstwy */
+	padding: 1.2rem; /* wewnętrzny margines */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	width: 100%; /* szerokość */
+	margin: 0 auto; /* margines */
+	gap: 1.2rem; /* odstęp między elementami */
+	background-color: var(--black700); /* kolor tła */
+	position: absolute; /* pozycja */
+	right: 0; /* odległość od prawej krawędzi */
+	left: 0; /* odległość od lewej krawędzi */
+	bottom: 0; /* odległość od dolnej krawędzi */
+}
+/* styl dla paragrafu w kontenerze z tekstem */
+.watch-container .watch-text p {
+	text-align: center; /* wyśrodkowanie tekstu */
+	font-size: 2.2rem; /* rozmiar czcionki */
+	font-weight: 500; /* grubość czcionki */
+}
+/* styl dla przycisku usuwającego zegarek */
+.watch-container .remove-clock {
+	justify-self: flex-end; /* wWyśrodkowanie przycisku usuwania zegarka do prawej */
+}
+/* styl dla wyłączonego przycisku dodawania nowych zegarków */
+.watch-container-empty > button:disabled {
+	opacity: 0.7; /* przezroczystość */
+	cursor: unset; /* kursor wyłączony */
+}
+/* styl dla wyłączonego przycisku dodawania nowych zegarków po najechaniu na niego */
+.watch-container-empty > button:hover:disabled {
+	background-color: var(--primary100); /* kolor tła */
+	color: var(--black700); /* kolor tekstu */
+}
+/* styl dla paska zegarka */
+.strap {
+	height: 26rem; /* wysokość */
+	width: 10rem; /* szerokość */
+	position: absolute; /* pozycja */
+	transform: translate(-50%); /* przesunięcie o 50% */
+	left: 50%; /* odległość od lewej krawędzi */
+	z-index: 0; /* indeks warstwy */
+	background: var(--black800); /* kolor tła */
+}
+/* styl dla elementu wyświetlającego czas danego zegarka */
+.current-time {
+	font-size: 1.8rem; /* rozmiar czcionki */
+}
+/* styl dla tarczy zegarka */
+.watch {
+	width: 20rem; /* szerokość */
+	height: 20rem; /* wysokość */
+	border: 0.75rem solid var(--black500); /* grubość i styl obramowania */
+	background: radial-gradient(
+		circle,
+		var(--black500) 0%,
+		var(--black800) 65%
+	); /* tło gradientowe */
+	box-shadow: 0 0 0 1rem var(--black800); /* cień */
+	border-radius: 50%; /* promień zaokrąglenia */
+	position: absolute; /* pozycja */
+	left: 50%; /* odległość od lewej krawędzi */
+	top: 50%; /* odległość od górnej krawędzi */
+	transform: translate(-50%, -50%); /* przesunięcie o 50% */
+	z-index: 1; /* indeks warstwy */
+}
+/* styl dla elementu z boku zegarka */
+.pin {
+	position: absolute; /* pozycja */
+	height: 3rem; /* wysokość */
+	width: 2rem; /* szerokość */
+	background: var(--black800); /* kolor tła */
+	border-radius: 0 30% 30% 0; /* promień zaokrąglenia */
+	transform: translate(-50%, -50%); /* przesunięcie o 50% */
+	top: 50%; /* odległość od górnej krawędzi */
+	left: 110%; /* odległość od lewej krawędzi */
+}
+/* styl dla elementu znajdującego się na środku tarczy zegarka */
+.watch::after {
+	content: ""; /* treść pseudoelementu */
+	position: absolute; /* pozycja absolutna */
+	top: 50%; /* odległość od górnej krawędzi */
+	left: 50%; /* odległość od lewej krawędzi */
+	transform: translate(-50%, -50%); /* przesunięcie o 50% */
+	background: var(--black700); /* kolor tła */
+	width: 1rem; /* szerokość */
+	height: 1rem; /* wysokość */
+	border-radius: 50%; /* promień zaokrąglenia - okrągły */
+}
+/* styl dla zdjęcia tarczy zegarka */
+.watch img {
+	pointer-events: none; /* zdarzenia myszy ustawione na brak - użytkownik nie może przeciągnąć zdjęcia */
+	position: absolute; /* pozycja absolutna */
+	top: 50%; /* odległość od górnej krawędzi */
+	left: 50%; /* odległość od lewej krawędzi */
+	transform: translate(-50%, -50%); /* przesunięcie o 50% */
+	opacity: 0.7; /* przezroczystość */
+	filter: invert(1); /* odwrócenie kolorów */
+	width: 20rem; /* szerokość */
+}
+/* styl dla wskazówki */
+.hand {
+	position: absolute; /* pozycja */
+	margin: auto; /* margines */
+	left: 0; /* odległość od lewej krawędzi */
+	right: 0; /* odległość od prawej krawędzi */
+	border-radius: 0.5rem; /* promień zaokrąglenia */
+	transform-origin: bottom; /* punkt transformacji */
+	box-shadow: 0.1rem 0.5rem 0.4rem 0 var(--black500); /* cień */
+}
+/* styl dla wskazówki godziny */
+.hour {
+	height: 4.5rem; /* wysokość */
+	width: 0.6rem; /* szerokość */
+	top: 4.8rem; /* odległość od górnej krawędzi */
+	background: var(--brown100); /* kolor tła */
+}
+/* styl dla wskazówki minuty */
+.minute {
+	height: 6.5rem; /* wysokość */
+	width: 0.6rem; /* szerokość */
+	top: 2.8rem; /* odległość od górnej krawędzi */
+	background: var(--brown100); /* kolor tła */
+}
+/* styl dla wskazówki sekundy */
+.seconds {
+	height: 8rem; /* wysokość */
+	width: 0.45rem; /* szerokość */
+	top: 1.3rem; /* odległość od górnej krawędzi */
+	background: var(--primary100); /* kolor tła */
+}
+/* Style dla piątej sekcji strony - koniec */
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* Style dla pierwszej sekcji strony - start */
+	/* styl dla slajdu */
+	.swiper-slide {
+		max-width: 60rem; /* maksymalna szerokość slajdu */
+	}
+	/* Style dla pierwszej sekcji strony - koniec */
+
+	/* Style dla drugiej sekcji strony - start */
+	/* styl dla kontenera zachęcającego użytkownika do kupna */
+	.cta-container {
+		align-items: center; /* wyrównanie elementów w pionie */
+		justify-content: center; /* wyrównanie elementów w poziomie */
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* Style dla drugiej sekcji strony - koniec */
+
+	/* Style dla trzeciej sekcji strony - start */
+	/* styl dla kontenera z newsletterem i popularnymi markami */
+	.newsletter,
+	.popular-brands {
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* Style dla trzeciej sekcji strony - koniec */
+
+	/* Style dla czwartej sekcji strony - początek */
+	/* styl dla zdjęcia newslettera */
+	.newsletter-img img {
+		width: 40rem; /* szerokość obrazu w sekcji newsletter */
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.offers-container {
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* Style dla czwartej sekcji strony - koniec */
+
+	/* Style dla piątej sekcji strony - początek */
+	.watch-container .watch-text {
+		width: 80%;
+	}
+	/* Style dla piątej sekcji strony - koniec */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 768px */
+@media screen and (min-width: 768px) {
+	/* Style dla trzeciej sekcji strony - start */
+
+	/* styl dla kontenera zawierającego marki zegarków */
+	.brands-container {
+		grid-template-columns: repeat(
+			4,
+			1fr
+		); /* cztery kolumny o jednakowej szerokości */
+	}
+	/* styl dla kontenera z newsletterem i popularnymi markami */
+	.newsletter,
+	.popular-brands {
+		max-width: 80rem; /* maksymalna szerokość */
+	}
+	/* Style dla trzeciej sekcji strony - koniec */
+
+	/* Style dla czwartej sekcji strony - start */
+	/* styl dla nagłówka h2 w kontenerze z ofertą firmy */
+	.offers-container h2 {
+		grid-column: span 2;
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.offers-container {
+		margin: 2rem auto;
+		justify-content: center;
+	}
+	/* Style dla czwartej sekcji strony - koniec */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* Style dla pierwszej sekcji strony - start */
+	/* styl sekcji zawierającej pokaz slajdów */
+	.hero {
+		background: radial-gradient(
+			circle at center,
+			var(--black800),
+			var(--black700),
+			var(--black500) 100%
+		); /* gradient tła w kształcie koła - koło na środku, ciemny kolor */
+	}
+	/* Style dla pierwszej sekcji strony - koniec */
+
+	/* Style dla drugiej sekcji strony - start */
+	/* styl dla kontenera zachęcającego użytkownika do kupna */
+	.cta-container {
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* trzy kolumny o równych szerokościach */
+		max-width: 80vw; /* maksymalna szerokość */
+		gap: 1rem 3rem; /* odstęp między elementami */
+		align-items: unset; /* wyzerowanie wyrównania elementów w pionie */
+	}
+	/* styl dla artykułu w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container article {
+		display: flex; /* wyświetlenie jako flexbox */
+		flex-direction: column; /* ułożenie w kolumnie */
+	}
+	/* styl dla nagłówka h1 w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container h1 {
+		grid-column: span 3; /* zajęcie trzech kolumn */
+	}
+	/* styl dla nagłówka h2 w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container h2 {
+		margin: 0; /* reset marginesu */
+		min-height: 7rem; /* minimalna wysokość */
+	}
+	/* styl dla paragrafu w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container p {
+		font-size: 1.8rem; /* rozmiar czcionki */
+	}
+	/* styl dla odnośnika w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container > a {
+		display: flex; /* wświetlenie jako flexbox */
+		width: 100%; /* pełna szerokość */
+		grid-column: span 3; /* zajęcie trzech kolumn */
+	}
+	/* styl dla odnośnika w artykule w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container article a {
+		display: none; /* ukrycie odnośnika */
+	}
+	/* pokazanie arytkułów w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container article:nth-of-type(2),
+	.cta-container article:nth-of-type(3) {
+		display: flex; /* wyświetlenie jako flexbox */
+	}
+	/* Style dla drugiej sekcji strony - koniec */
+
+	/* Style dla trzeciej sekcji strony - start */
+	/* styl dla nagłówka h2 w kontenerze z popularnymi markami */
+	.popular-brands h2 {
+		max-width: 80vw; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* styl dla kontenera popularnych marek */
+	.popular-brands {
+		max-width: 100vw; /* maksymalna szerokość */
+	}
+	.img-container {
+		margin: 0 auto; /* wyśrodkowanie */
+		max-width: 20rem; /* maksymalna szerokość */
+	}
+	/* Style dla trzeciej sekcji strony - koniec */
+
+	/* Style dla czwartej sekcji strony - start */
+	/* styl dla kontenera z newsletterem */
+	.newsletter {
+		max-width: 80vw; /* maksymalna szerokość */
+		flex-direction: row; /* ułożenie w rzędzie */
+		gap: 4rem; /* odstęp między elementami */
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.offers-container {
+		max-width: 80vw; /* maksymalna szerokość */
+	}
+	/* Style dla czwartej sekcji strony - koniec */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1200px */
+@media screen and (min-width: 1200px) {
+	/* Style dla czwartej sekcji strony - start */
+
+	/* styl dla nagłówka h2 w kontenerze z ofertą firmy */
+	.offers-container h2 {
+		grid-column: span 4; /* zajęcie szerokości czterech kolumn */
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.offers-container {
+		grid-template-columns: repeat(
+			4,
+			1fr
+		); /* cztery kolumny o jednakowej szerokości */
+	}
+	/* Style dla czwartej sekcji strony - koniec */
+
+	/* Style dla piątej sekcji strony - początek */
+	/* styl dla kontenera z zegarkami */
+	.watches {
+		display: grid; /* ustawienie wyświetlania na siatkę */
+		max-width: unset; /* reset maksymalnej szerokości */
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* ustawienie kolumn na trzy równe części */
+		align-items: center; /* wyrównanie elementów w pionie */
+		gap: 2rem; /* odstęp między elementami */
+	}
+	/* styl dla nagłówka h2 w w kontenerze z zegarkami */
+	.watches h2 {
+		grid-column: span 3; /* tytuł zajmuje trzy kolumny */
+	}
+	/* styl dla kontenera zawierającego formularz dodawania nowego zegarka */
+	.watch-container-empty {
+		grid-column: 2 / 3; /* zajmuje drugą kolumnę */
+		grid-row: 2 / 3; /* zajmuje drugi wiersz */
+		padding: 1.2rem; /* wewnętrzny margines */
+		max-width: 40rem; /* maksymalna szerokość */
+	}
+	/* styl dla pojemnika z zegarkiem */
+	.watch-container {
+		width: 100%; /* szerokość 100% */
+	}
+	/* Style dla piątej sekcji strony - koniec */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1444px */
+@media screen and (min-width: 1444px) {
+	/* Style dla drugiej sekcji strony - start */
+	/* styl dla kontenera zachęcającego użytkownika do kupna */
+	.cta-container {
+		max-width: 120rem; /* maksymalna szerokość */
+	}
+	/* styl dla odnośnika w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container > a {
+		max-width: 80rem; /* maksymalna szerokość odnośnika */
+		margin: 1.2rem auto; /* margines */
+	}
+	/* styl dla nagłówka h2 w kontenerze zachęcającym użytkownika do kupna */
+	.cta-container h2 {
+		font-size: 2.6rem; /* rozmiar czcionki */
+	}
+	/* Style dla drugiej sekcji strony - koniec */
+
+	/* Style dla trzeciej sekcji strony - start */
+	.popular-brands h2 {
+		padding-bottom: 4rem; /* dolny padding */
+		max-width: 120rem; /* maksymalna szerokość */
+	}
+	.popular-brands {
+		margin-bottom: 6rem; /* margines dolny */
+	}
+	/* styl dla kontenera zawierającego marki zegarków */
+	.brands-container {
+		grid-template-columns: repeat(
+			8,
+			1fr
+		); /* osiem kolumn o jednakowej szerokości */
+	}
+	.popular-brands a {
+		font-size: 1.8rem; /* rozmiar czcionki odnośnika */
+	}
+	/* Style dla trzeciej sekcji strony - koniec */
+
+	/* Style dla czwartej sekcji strony - start */
+	/* styl dla kontenera z newsletterem */
+	.newsletter {
+		max-width: 120rem; /* maksymalna szerokość */
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.offers-container {
+		max-width: 120rem; /* maksymalna szerokość */
+		gap: 1.8rem; /* odstęp między elementami */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* styl dla ikony pojedynczej ofery firmy */
+	.offer span {
+		width: 6rem; /* szerokość */
+		font-size: 3rem; /* rozmiar czcionki */
+		height: 6rem; /* wysokość */
+		display: flex; /* wyświetlenie jako flexbox */
+		align-items: center; /* wyrównanie w pionie */
+		justify-content: center; /* wyrównanie w poziomie */
+	}
+	/* styl dla kontenera z ofertą firmy */
+	.newsletter,
+	.offers-container {
+		padding: 2rem 0; /* wewnętrzny odstęp */
+	}
+	/* Style dla czwartej sekcji strony - koniec */
+
+	/* Style dla piątej sekcji strony - początek */
+	/* styl dla kontenera zawierającego formularz dodawania nowego zegarka */
+	.watch-container-empty {
+		padding: 3rem;
+		max-width: 50rem;
+	}
+	/* Style dla piątej sekcji strony - koniec */
+}

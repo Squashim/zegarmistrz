@@ -1,0 +1,567 @@
+[
+  {
+    "manufacture": "Adriatica",
+    "name": "Classic",
+    "model": "A1293.5213Q",
+    "imagePath": "images/adriatica1.webp",
+    "price": "789",
+    "isNew": false,
+    "isBestseller": true,
+    "onSale": true,
+    "discount": 5
+  },
+  {
+    "manufacture": "Certina",
+    "name": "Aqua DS Action Diver",
+    "model": "C032.807.11.051.00 (C0328071105100)",
+    "imagePath": "images/certina1.webp",
+    "price": "4 090",
+    "isNew": false,
+    "isBestseller": true,
+    "onSale": true, "discount": 10
+  },
+  {
+    "manufacture": "Festina",
+    "name": "Timeless Chronograph",
+    "model": "F20560/3",
+    "imagePath": "images/festina1.webp",
+    "price": "799",
+    "isNew": false,
+    "isBestseller": true,
+    "onSale": true, "discount": 15
+  },
+  {
+    "manufacture": "Vostok Europe",
+    "name": "Expedition North Pole-1 Limited Edition",
+    "model": "YN55-595A638",
+    "imagePath": "images/vostok1.webp",
+    "price": "1 290",
+    "isNew": false,
+    "isBestseller": true,
+    "onSale": true, "discount": 25
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "SAPPHIRE",
+    "model": "A2804.1211Q",
+    "imagePath": "images/adriatica3.webp",
+    "price": "845",
+    "isNew": true,
+    "isBestseller": true,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Tissot",
+    "name": "Supersport Chrono",
+    "model": "T125.617.33.051.00 (T1256173305100)",
+    "imagePath": "images/tissot1.webp",
+    "price": "2 550",
+    "isNew": false,
+    "isBestseller": true,
+    "onSale": true, "discount": 10
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "Classic",
+    "model": "A1230.5263QXL",
+    "imagePath": "images/adriatica2.webp",
+    "price": "790",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "SAPPHIRE",
+    "model": "A1288.5114Q",
+    "imagePath": "images/adriatica3.webp",
+    "price": "868",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "Classic",
+    "model": "A8000.5223Q",
+    "imagePath": "images/adriatica1.webp",
+    "price": "680",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 15
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "Multifunction Chronograph",
+    "model": "A8283.5154CH",
+    "imagePath": "images/adriatica2.webp",
+    "price": "1 980",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 20
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "Moonphase",
+    "model": "A8306.51R7QF",
+    "imagePath": "images/adriatica1.webp",
+    "price": "1 098",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 10
+  },
+  {
+    "manufacture": "Adriatica",
+    "name": "Chronograph",
+    "model": "A8334.S1R6CH",
+    "imagePath": "images/adriatica2.webp",
+    "price": "1 390",
+    "isNew": true,
+    "isBestseller": false,
+    "onSale": true, "discount": 25
+  },
+  {
+    "manufacture": "Certina",
+    "name": "Sport DS Podium Chrono",
+    "model": "C034.417.11.057.00 (C0344171105700)",
+    "imagePath": "images/certina1.webp",
+    "price": "2 690",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 10
+  },
+  {
+    "manufacture": "Certina",
+    "name": "Urban DS-1",
+    "model": "C029.807.16.081.01 (C0298071608101)",
+    "imagePath": "images/certina2.webp",
+    "price": "3 490",
+    "isNew": true,
+    "isBestseller": false,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Certina",
+    "name": "Aqua DS Action Day-Date",
+    "model": "C032.430.16.041.00 (C0324301604100)",
+    "imagePath": "images/certina1.webp",
+    "price": "3 590",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Certina",
+    "name": "DS Caimano Gent",
+    "model": "C017.410.16.037.01 (C0174101603701)",
+    "imagePath": "images/certina2.webp",
+    "price": "1 450",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 15
+  },
+  {
+    "manufacture": "Certina",
+    "name": "DS PH1000M",
+    "model": "C024.907.18.051.00 (C0249071805100)",
+    "imagePath": "images/certina2.webp",
+    "price": "4 740",
+    "isNew": true,
+    "isBestseller": false,
+    "onSale": true, "discount": 25
+  },
+  {
+    "manufacture": "Citizen",
+    "name": "Radio Controlled Super Titanium Eco-Drive",
+    "model": "AT8218-81L",
+    "imagePath": "images/citizen1.webp",
+    "price": "2 873",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 20
+  },
+  {
+    "manufacture": "Citizen",
+    "name": "Mechanical",
+    "model": "NJ0150-81Z",
+    "imagePath": "images/citizen1.webp",
+    "price": "1 590",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 5
+  },
+  {
+    "manufacture": "Citizen",
+    "name": "Mechanical",
+    "model": "NJ0150-81X",
+    "imagePath": "images/citizen2.webp",
+    "price": "1 590",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 15
+  },
+  {
+    "manufacture": "Citizen",
+    "name": "Mechanical",
+    "model": "NJ0150-81E",
+    "imagePath": "images/citizen2.webp",
+    "price": "1 590",
+    "isNew": false,
+    "isBestseller": false,
+    "onSale": true, "discount": 10
+  },
+    {
+      "manufacture": "Timex",
+      "name": "Expedition Outdoor Tide/Temp/Compass",
+      "model": "TW2V03900",
+      "imagePath": "images/timex1.webp",
+      "price": "1 011",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Certina",
+      "name": "Sport DS Podium Chrono",
+      "model": "C034.417.11.097.00 (C0344171109700)",
+      "imagePath": "images/certina2.webp",
+      "price": "2 690",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Certina",
+      "name": "Sport DS Podium Chrono",
+      "model": "C034.417.11.057.00 (C0344171105700)",
+      "imagePath": "images/certina2.webp",
+      "price": "2 690",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Certina",
+      "name": "Urban DS-1",
+      "model": "C029.807.16.081.01 (C0298071608101)",
+      "imagePath": "images/certina1.webp",
+      "price": "3 490",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Certina",
+      "name": "Aqua DS Action Diver",
+      "model": "C032.807.11.051.00 (C0328071105100)",
+      "imagePath": "images/certina3.webp",
+      "price": "4 090",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Certina",
+      "name": "Aqua DS Action Day-Date",
+      "model": "C032.430.16.041.00 (C0324301604100)",
+      "imagePath": "images/certina4.webp",
+      "price": "3 590",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Tissot",
+      "name": "Supersport Chrono",
+      "model": "T125.617.36.051.00 (T1256173605100)",
+      "imagePath": "images/tissot1.webp",
+      "price": "2 350",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": false
+    },
+   
+    {
+      "manufacture": "Tissot",
+      "name": "T-Sport Supersport Chrono",
+      "model": "T125.617.36.051.01 (T1256173605101)",
+      "imagePath": "images/tissot2.webp",
+      "price": "2 200",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Tissot",
+      "name": "T-Sport Supersport Chrono",
+      "model": "T125.617.16.041.00 (T1256171604100)",
+      "imagePath": "images/tissot2.webp",
+      "price": "2 100",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Pilot Chrono Eco-Drive",
+      "model": "CA4470-15X",
+      "imagePath": "images/citizen1.webp",
+      "price": "833",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "G-Squad Bluetooth Sync Step Tracker",
+      "model": "GBA-900-1AER",
+      "imagePath": "images/gshock1.webp",
+      "price": "679",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Vostok Europe",
+      "name": "Lunokhod-2 Chrono Limited Edition",
+      "model": "6S21-620E631",
+      "imagePath": "images/vostok1.webp",
+      "price": "3 790",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+   
+    {
+      "manufacture": "Tommy Hilfiger",
+      "name": "West GMT",
+      "model": "1791708",
+      "imagePath": "images/tommy1.webp",
+      "price": "779",
+      "isNew": false,
+      "isBestseller": true,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Radio Controlled Chronograph",
+      "model": "CB5887-55H",
+      "imagePath": "images/citizen3.webp",
+      "price": "2 278",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Zeppelin",
+      "name": "Atlantic Automatic",
+      "model": "8466-2",
+      "imagePath": "images/zeppelin1.webp",
+      "price": "1 165",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Zeppelin",
+      "name": "Atlantic Timezone",
+      "model": "8442-5",
+      "imagePath": "images/zeppelin2.webp",
+      "price": "1 190",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Zeppelin",
+      "name": "Atlantic Automatic",
+      "model": "8466-5",
+      "imagePath": "images/zeppelin2.webp",
+      "price": "1 370",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "Casio Carbon Core Guard",
+      "model": "GA-2100-1A1ER",
+      "imagePath": "images/gshock1.webp",
+      "price": "499",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "Casio Carbon Core Guard",
+      "model": "GA-2100-1AER",
+      "imagePath": "images/gshock2.webp",
+      "price": "499",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "Master of G Mudmaster Carbon Core Guard Quad Sensor Bluetooth Sync",
+      "model": "GG-B100-1A3ER",
+      "imagePath": "images/gshock2.webp",
+      "price": "1 699",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Timex",
+      "name": "Classic Southview",
+      "model": "TW2T35100",
+      "imagePath": "images/timex2.webp",
+      "price": "390",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "G-SHOCK G-Squad Bluetooth Sync Step Tracker",
+      "model": "GBD-800-1BER",
+      "imagePath": "images/gshock1.webp",
+      "price": "549",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Aviator Chrono Eco-Drive",
+      "model": "CA0695-84E",
+      "imagePath": "images/citizen3.webp",
+      "price": "1 000",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "G-SHOCK",
+      "name": "Casio G-Steel Solar Bluetooth",
+      "model": "GST-B100-1AER",
+      "imagePath": "images/gshock3.webp",
+      "price": "1 599",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Eco-Drive Classic",
+      "model": "BM8470-11EE",
+      "imagePath": "images/citizen4.webp",
+      "price": "569",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Basic",
+      "model": "BF2011-51AE",
+      "imagePath": "images/citizen2.webp",
+      "price": "395",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Sports Eco-Drive",
+      "model": "AT2141-87E",
+      "imagePath": "images/citizen2.webp",
+      "price": "1 266",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Citizen",
+      "name": "Eco-Drive Radio Controlled",
+      "model": "AT9036-08E",
+      "imagePath": "images/citizen3.webp",
+      "price": "1 776",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    
+    {
+      "manufacture": "G-SHOCK",
+      "name": "Casio Rangeman",
+      "model": "GW-9400-1ER (GW-9400-1)",
+      "imagePath": "images/gshock2.webp",
+      "price": "1 299",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": false
+    },
+    {
+      "manufacture": "Suunto",
+      "name": "9 Peak Pro Forest Green",
+      "model": "SS050828000",
+      "imagePath": "images/suunto1.webp",
+      "price": "2 369",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": true, "discount": 10
+    },
+    {
+      "manufacture": "Polar",
+      "name": "Grit X Pro Titan M/L",
+      "model": "725882058726",
+      "imagePath": "images/polar1.webp",
+      "price": "2 949",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": true, "discount": 20
+    },
+    {
+      "manufacture": "Polar",
+      "name": "Grit X Pro Czarny M/L",
+      "model": "725882058696",
+      "imagePath": "images/polar1.webp",
+      "price": "2 299",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": true, "discount": 5
+    },
+    {
+      "manufacture": "Festina",
+      "name": "Timeless Chronograph",
+      "model": "F20561/2",
+      "imagePath": "images/festina1.webp",
+      "price": "799",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": true, "discount": 15
+    },
+   
+    {
+      "manufacture": "Festina",
+      "name": "Sport Chronograph",
+      "model": "F20541/4",
+      "imagePath": "images/festina2.webp",
+      "price": "979",
+      "isNew": false,
+      "isBestseller": false,
+      "onSale": true, "discount": 5
+    },
+    {
+      "manufacture": "Sekonda",
+      "name": "Equinox",
+      "model": "1140",
+      "imagePath": "images/sekonda1.webp",
+      "price": "455",
+      "isNew": true,
+      "isBestseller": false,
+      "onSale": true, "discount": 10
+    }
+]

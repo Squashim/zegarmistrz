@@ -1,0 +1,75 @@
+/* Style stylizujące elementy na stronie company.html */
+
+/* styl dla głównego elementu na stronie */
+main {
+	min-height: calc(
+		100vh - 6rem
+	); /* minimalna wysokość / odejmujemy od całej wysokości ekranu 60 px*/
+}
+/* styl dla kontenera zawierającego logo strony */
+.logo {
+	max-width: 120rem; /* maksymalna szerokość 1200px */
+	margin: 0 auto; /* automatyczne wyśrodkowanie */
+}
+/* styl dla zdjęcia logo strony */
+.logo img {
+	width: 15rem; /* szerokość logo 150px */
+}
+/* styl dla kontenera zawierającego informacje o marce zegarka */
+.mark-container {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	align-items: center; /* wyśrodkowanie elementów w poziomie */
+	justify-content: center; /* wyśrodkowanie elementów w pionie */
+	gap: 5rem; /* odstęp między elementami 50px */
+}
+/* styl dla zdjęcia danej marki zegarka */
+.mark-container img {
+	max-width: 100%; /* maksymalna szerokość 100% */
+	filter: grayscale(1) invert(1); /* przetwarzanie obrazu: przekształcenie w odcienie szarości i odwrócenie kolorów */
+}
+/* styl dla paragrafu w opisie marki zegarka */
+.mark-description p {
+	margin-bottom: 1.2rem; /* margines dolny 12px */
+	text-indent: 1.8rem; /* wcięcie tekstu 18px */
+}
+/* styl dla nagłówka h3 w opisie marki zegarka */
+.mark-description h3 {
+	margin-top: 1.2rem; /* margines górny 12px */
+}
+/* styl dla odnośnika w kontenerze z informacjami o danej marce */
+.mark-container a {
+	display: block; /* wyświetlanie jako blok */
+	text-decoration: underline; /* podkreślenie tekstu */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla kontenera zawierającego informacje o marce zegarka */
+	.mark-container {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 0 auto; /* automatyczne wyśrodkowanie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla głównego kontenera na stronie */
+	main {
+		background: linear-gradient(
+			90deg,
+			var(--black800),
+			var(--black500),
+			var(--black800)
+		); /* tło gradientowe, kąt 90 stopni, 3 kolory*/
+	}
+	/* styl dla kontenera zawierającego informacje o marce zegarka */
+	.mark-container {
+		flex-direction: row; /* układanie elementów w rzędzie */
+		max-width: unset; /* brak maksymalnej szerokości */
+	}
+	/* styl dla konteneru zawierającego opis marki zegarka */
+	.mark-description {
+		max-width: 70rem; /* maksymalna szerokość 700px */
+	}
+}

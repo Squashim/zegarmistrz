@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - serwis</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony service.html -->
+		<link rel="stylesheet" href="../css/service.css" />
+		<!-- Dołączenie pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+		<!-- Dołączanie skryptów jako modułów, obsługujących stopkę i nawigację. -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="../js/handleNav.js"></script>
+		<script type="module" src="../js/handleFooter.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Nawigacja -->
+			<nav>
+				<!-- Link do strony głównej z logo -->
+				<a href="/zegarmistrz/index.html" class="logo">
+					<!-- Logo strony -->
+					<img src="../assets/logo_white.png" alt="logo" />
+				</a>
+				<!-- Lista głównych linków nawigacyjnych -->
+				<ul class="nav-links">
+					<!-- Pozycja w liście -->
+					<li class="nav-link">
+						<!-- Link do strony głównej -->
+						<a href="/zegarmistrz/index.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol domu -->
+								<span class="material-symbols-outlined"> home </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Strona główna</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony serwisowej -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony o nas -->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link" id="nav-login">
+						<!-- Link do strony logowania -->
+						<a href="/zegarmistrz/pages/login.html" class="nav-link-btn">
+							<!-- Ikona logowania-->
+							<div class="nav-link-icon">
+								<!-- Symbol logowania -->
+								<span class="material-symbols-outlined"> login </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zaloguj się</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Link do strony koszyka -->
+						<a href="/zegarmistrz/pages/cart.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol koszyka -->
+								<span class="material-symbols-outlined"> shopping_cart </span>
+							</div>
+							<!-- Ilość przedmiotów w koszyku -->
+							<span class="cart-quantity"></span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Koszyk</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Prrzycisk do wylogowania ze strony-->
+						<button class="nav-link-btn logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+						</button>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Przycisk przenoszący do menu -->
+						<button class="nav-group-menu nav-link-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol menu -->
+								<span class="material-symbols-outlined"> menu </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Menu</span>
+						</button>
+					</li>
+				</ul>
+
+				<!-- Lista rozwijanych linków nawigacyjnych widoczna na małych ekranach -->
+				<ul class="nav-links-dropdown">
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony serwisu -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony o nas-->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w rozwijanej liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link-dp nav-hidden">
+						<!-- Przycisk do wylogowania ze sklepu-->
+						<button class="nav-link-btn-dp logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon-dp">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Wyloguj się</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja dotycząca naprawy zegarków -->
+			<section>
+				<!-- Nagłówek informujący o temacie sekcji -->
+				<h1>Naprawa zegarków</h1>
+
+				<!-- Artykuł opisujący profesjonalne usługi naprawy zegarków -->
+				<article>
+					<!-- Nagłówek podsekcji -->
+					<h2>> Profesjonalne usługi</h2>
+					<!-- Paragraf zawierający opis usług naprawczych -->
+					<p>
+						Jeśli Twój ulubiony zegarek przestał działać lub potrzebuje naprawy,
+						jesteśmy tutaj, aby Ci pomóc. Nasza firma zajmie się naprawą
+						wszelakich zegarków, bez względu na markę, model czy typ usterki.
+					</p>
+				</article>
+
+				<!-- Artykuł zawierający listę usług naprawczych -->
+				<article class="services-container">
+					<!-- Nagłówek podsekcji -->
+					<h2>> Zapewniamy</h2>
+					<!-- Lista usług naprawczych -->
+					<ul>
+						<li class="btn-li">Naprawę mechanizmu</li>
+						<li class="btn-li">Wymianę baterii</li>
+						<li class="btn-li">Wymianę paska lub bransolety</li>
+						<li class="btn-li">Naprawę uszkodzonego szkła</li>
+						<li class="btn-li">Usunięcie wilgoci z wnętrza zegarka</li>
+						<li class="btn-li">Diagnostykę usterki</li>
+					</ul>
+				</article>
+			</section>
+
+			<!-- Sekcja opisująca proces korzystania z usług -->
+			<section>
+				<!-- Artykuł opisujący proces korzystania z usług naprawczych -->
+				<article class="how-to-container">
+					<!-- Nagłówek podsekcji -->
+					<h2>> Jak to działa?</h2>
+					<!-- Paragraf opisujący proces korzystania z usług -->
+					<p>
+						Aby skorzystać z naszych usług, wystarczy zastosować się do
+						poniższych instrukcji. Nasz doświadczony zespół dokładnie
+						zdiagnozuje problem i przystąpi do naprawy. Adres sklepu znajdziecie
+						państwo niżej.
+					</p>
+					<!-- Kontener zawierający kroki procesu korzystania z usług -->
+					<div class="steps">
+						<!-- Kroki procesu -->
+						<div class="step">
+							<!--Ikona telefonu -->
+							<span class="btn-step material-symbols-outlined">phone</span>
+							<p>Umów się na wizytę, telefonicznie lub na miejscu.</p>
+						</div>
+						<div class="step">
+							<!--Ikona klucza -->
+							<span class="btn-step material-symbols-outlined">build</span>
+							<p>Dostarcz zegarek do nas, my zajmiemy się wyceną i naprawą.</p>
+						</div>
+						<div class="step">
+							<!--Ikona płatności -->
+							<span class="btn-step material-symbols-outlined">payments</span>
+							<p>Ureguluj płatność za usługę.</p>
+						</div>
+						<div class="step">
+							<!--Ikona wykonania-->
+							<span class="btn-step material-symbols-outlined">done</span>
+							<p>
+								Odbierz naprawiony zegarek w sklepie lub skorzystaj z dostawy.
+							</p>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<!-- Sekcja zawierająca informacje kontaktowe -->
+			<section>
+				<!-- Artykuł zawierający informacje kontaktowe -->
+				<article class="contact-container">
+					<!-- Kontener informacyjny -->
+					<div class="information">
+						<!-- Nagłówek podsekcji -->
+						<h2>> Skontaktuj się z nami</h2>
+						<!-- Paragraf zawierający informacje kontaktowe -->
+						<p>
+							Jeśli masz pytania dotyczące naprawy lub chcesz umówić się na
+							wizytę, skontaktuj się z nami telefonicznie, drogą mailową lub w
+							placówce naszej firmy.
+						</p>
+					</div>
+					<!-- Kontener z danymi kontaktowymi -->
+					<div class="contact">
+						<!-- Nagłówek danych kontaktowych -->
+						<h3>Kontakt</h3>
+						<!-- Dane kontaktowe -->
+						<p><b>Telefon: 81 241 96 21</b></p>
+						<!-- Godziny pracy -->
+						<div>
+							<p>Pn.-Pt.: 8:00 - 17:00</p>
+							<p>Sb.: 10:00 - 14:00</p>
+						</div>
+						<p><b>Email: zegarmistrz@sklep.pl</b></p>
+					</div>
+					<hr />
+					<!-- Pozioma linia oddzielająca elementy -->
+					<!-- Adres firmy -->
+					<div class="address">
+						<!-- Nagłówek z adresem firmy -->
+						<h3>Adres firmy</h3>
+						<!-- Informacje adresowe -->
+						<p>VIVO! Lublin, lokal 14</p>
+						<p>al. Unii Lubelskiej 2</p>
+						<p>20-108 Lublin</p>
+					</div>
+					<!-- Obrazek z ikoną kontaktową -->
+					<div class="contact-img">
+						<img src="/zegarmistrz/assets/contact.svg" alt="contact-image" />
+						<!-- Odnośnik do źródła zdjęć -->
+						<a
+							href="https://undraw.co/illustrations"
+							target="_blank"
+							class="source"
+							rel="noopener noreferrer"
+							>Źródło zdjęcia</a
+						>
+					</div>
+				</article>
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

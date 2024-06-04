@@ -1,0 +1,85 @@
+/* Style stylizujące elementy na stronie register.html */
+
+/* styl dla kontenera zawierającego logo strony */
+.logo {
+	max-width: 120rem; /* maksymalna szerokość 1200px */
+	margin: 0 auto; /* automatyczne wyśrodkowanie */
+}
+/* styl dla zdjęcia logo strony */
+.logo img {
+	width: 15rem; /* szerokość logo 150px */
+}
+/* styl dla formularza rejestracji */
+form {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	gap: 0.4rem; /* odstęp między elementami 4px */
+}
+/* styl dla etykiet i legendy w formularzu rejestracji */
+form label,
+legend {
+	font-size: 1.8rem; /* wielkość tekstu 18px */
+}
+/* styl dla pola fieldset w formularzu rejestracji */
+fieldset {
+	border: none; /* brak obramowania */
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: center; /* wyśrodkowanie elementów w poziomie */
+	gap: 4rem; /* odstęp między elementami 40px*/
+}
+/* styl dla rozwijanej listy w formularzu rejestracji */
+form select {
+	width: 100%; /* szerokość 100% */
+	outline: none; /* brak obrysu */
+	border: 1px solid var(--black800); /* obramowanie 1px solid w kolorze czarnym */
+	font-size: 1.8rem; /* wielkość tekstu 18px */
+	padding: 0.8rem 1.2rem; /* wewnętrzny odstęp 8px na górze i na dole, 12px po lewej i po prawej */
+	background: var(--white100); /* tło w kolorze jasnym*/
+	border-right: 1.2rem solid transparent; /* prawe obramowanie 12px solid w kolorze przeźroczystm */
+}
+/* styl dla checkboxów i przycisków radio w formularzu rejestracji */
+input[type="radio"],
+input[type="checkbox"] {
+	min-height: 2rem; /* minimalna wysokość 20px */
+	min-width: 2rem; /* minimalna szerokość 20px */
+	accent-color: var(--primary100); /* kolor akcentu */
+}
+/* styl dla kontenera zawierającego inputa */
+.input-group {
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	gap: 1rem; /* odstęp między elementami 10px */
+	margin: 0.4rem 0; /* margines 4px na górze i na dole, 0 po lewej i po prawej */
+}
+/* styl dla kontenera zawierającego pola checkbox */
+.checkbox-container {
+	margin-top: 2rem; /* margines górny 20px */
+}
+/* styl dla kontenera zawierającego przycisk powrotu do logowania */
+.back-login {
+	text-align: center; /* wyśrodkowanie tekstu */
+	margin: 4rem 0; /* margines 40px na górze i na dole, 0 po lewej i po prawej */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla kontenera zawierającego formularz rejestracji */
+	.register-container {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 0 auto; /* automatyczne wyśrodkowanie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla głównego kontenera na stronie */
+	main {
+		background: linear-gradient(
+			90deg,
+			var(--black800) 5%,
+			var(--black500),
+			var(--black800) 95%
+		); /* tło gradientowe, kąt 90 stopni, 3 kolory */
+	}
+}

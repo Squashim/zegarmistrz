@@ -1,0 +1,476 @@
+/* style stylizujące elementy na stronie shop.html */
+
+/* Początek stylów dla wyświetlania przedmiotów w sklepie */
+
+/* stylizacja głównej sekcji na stronie */
+.shop {
+	margin: 0 auto; /* wyśrodkowanie kontenera */
+	display: grid; /* ustawienie kontenera jako siatki */
+	gap: 2rem; /* odstęp między elementami */
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(25rem, 1fr)
+	); /* automatyczne dopasowanie szerokości kolumn, minimalna szerokość 25rem, maksymalna 1fr - cała kolumna*/
+}
+
+/* styl dla paragrafu wewnątrz .shop-container */
+.shop-container > p {
+	font-size: 1.8rem; /* rozmiar czcionki 18px */
+}
+
+/* styl dla kontenera zawierającego pojedynczy zegarek */
+.shop .watch-container {
+	display: flex; /* ustawienie kontenera jako flexbox */
+	flex-direction: column; /* ustawienie kierunku elementów na pionowy */
+	text-align: center; /* wyśrodkowanie tekstu */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów w pionie */
+	margin: 0 auto; /* wyśrodkowanie */
+	max-width: 30rem; /* maksymalna szerokość */
+}
+
+/* styl dla obrazka wewnątrz kontenera zawierającego zdjęcie zegarka */
+.watch-img-container img {
+	max-width: 100%; /* maksymalna szerokość obrazka */
+}
+
+/* styl dla klasy zawierającej specjalne informacje o zegarku*/
+.watch-special {
+	display: flex; /* ustawienie kontenera jako flexbox */
+	flex-direction: column; /* ustawienie kierunku elementów na pionowy */
+	width: 100%; /* pełna szerokość kontenera */
+}
+
+/* styl dla kontenera .watch-price-container */
+.watch-price-container {
+	display: flex; /* ustawienie kontenera jako flexbox */
+	align-items: center; /* wyśrodkowanie elementów względem osi poziomej */
+	justify-content: center; /* wyśrodkowanie elementów względem osi pionowej */
+	gap: 1.8rem; /* odstęp między elementami */
+}
+
+/* styl dla cen ze zniżką */
+.watch-price-old {
+	text-decoration: line-through; /* przekreślenie starej ceny */
+	opacity: 0.8; /* zmniejszenie przeźroczystości */
+}
+
+/* styl dla aktualnej ceny */
+.watch-price {
+	padding: 1rem 0; /* wewnętrzny odstęp góra/dół */
+	font-size: 2.2rem; /* rozmiar czcionki */
+}
+
+/* styl dla specjalnych ofert zegarka */
+.watch-special .new {
+	background-color: #148649; /* kolor tła dla nowych produktów */
+}
+
+.watch-special .bestseller {
+	background-color: #0f5d4d; /* kolor tła dla bestsellerów */
+}
+
+.watch-special .sale {
+	background-color: #15818f; /* kolor tła dla produktów na wyprzedaży */
+}
+
+/* styl dla przycisku pokaż więcej produktów */
+.show-more-btn {
+	max-width: 30rem; /* maksymalna szerokość */
+	margin: 0 auto; /* wyśrodkowanie poziome */
+	grid-column: 1 / -1; /* zajmowanie wszystkich kolumn */
+	margin-bottom: 2rem; /* odstęp na dole */
+}
+
+/* styl dla kontenera wyświetlającego informacje o tym, że nie znaleziono produktów */
+.not-found-container {
+	display: flex; /* ustawienie kontenera jako flexbox */
+	align-items: center; /* wyśrodkowanie elementów względem osi poziomej */
+	justify-content: center; /* wyśrodkowanie elementów względem osi pionowej */
+	flex-direction: column; /* ustawienie kierunku elementów na pionowy */
+	font-size: 120%; /* rozmiar czcionki */
+	gap: 3rem; /* odstęp między elementami */
+	min-height: 55vh; /* minimalna wysokość kontenera */
+}
+
+/* styl dla linków do marek */
+.brand-link {
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla linku */
+}
+
+.brand-link:hover {
+	text-decoration: underline; /* podkreślenie po najechaniu myszką */
+}
+/* Koniec stylów dla wyświetlania przedmiotów w sklepie */
+
+/* Początek stylów dla wyświetlania filtrowania i sortowania */
+/* wspólny styl dla obu menu widocznych na telefonie */
+.sort-menu,
+.filter-menu {
+	position: fixed; /* ustalenie pozycji menu jako stała */
+	z-index: 10; /* ustawienie wartości z-index, tak aby menu było widoczne ponad wszystkim */
+	padding: 0 2.4rem; /* wewnętrzny odstęp poziomy */
+	top: -40%; /*  odstęp od góry ekranu */
+	width: 100%; /* szerokość menu */
+	overflow-x: hidden; /* ukrycie przewijania poziomego */
+	background: var(--black700); /* kolor tła */
+	opacity: 0; /* dodatkowe schowanie przez zmiejszenie przezroczystości*/
+	font-weight: 500; /* grubość czcionki */
+	border-radius: 0 0 0.8rem 0.8rem; /* zaokrąglenie rogów */
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla właściwości top */
+}
+
+/* styl dla nawigacji w menu sortowania i filtrów */
+.sort-menu-nav,
+.filter-menu-nav {
+	display: flex; /* układ elementów w linii */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów */
+	padding: 2.4rem 0; /* wewnętrzny odstęp góra/dół */
+}
+
+/* styl dla zawartości menu sortowania i filtrów */
+.sort-menu-content,
+.filter-menu-content {
+	display: flex; /* układ elementów w linii */
+	flex-direction: column; /* układ elementów w kolumnie */
+	gap: 1.8rem; /* odstęp między elementami */
+}
+/* Koniec stylów dla wyświetlania filtrowania i sortowania */
+
+/* Początek stylu dla sortowania */
+/* styl dla elementów listy w menu sortowania */
+.sort-menu-content li {
+	display: flex; /* układ elementów w linii */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów */
+	font-size: 2rem; /* rozmiar czcionki */
+	cursor: pointer; /* zmiana kursora na wskaźnik */
+	border-left: 2px solid transparent; /* lewa krawędź ustawiona na przezroczystą*/
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla wszystkich właściwości */
+}
+
+/* styl dla stanu najechania kursorem i zaznaczonego elementu w menu sortowania */
+.sort-menu-content li:hover,
+.sort-menu-content li.checked {
+	color: var(--primary100); /* kolor tekstu */
+	padding-left: 1.2rem; /* wewnętrzny odstęp z lewej strony */
+	border-color: var(--primary100); /* kolor obramowania*/
+	letter-spacing: 1px; /* odstęp między literami */
+}
+
+/* styl dla otwartego menu sortowania */
+.sort-menu.open {
+	height: 45vh; /* wysokość menu po otwarciu */
+	opacity: 1; /* pełna przejrzystość */
+	top: 6rem; /* odstęp 60px od góry strony */
+	display: flex; /* wyświetlenie menu */
+	flex-direction: column; /* układ elementów w kolumnie */
+}
+
+/* styl dla niezaznaczonej opcji sortowania*/
+.sort-menu-content .sort-option span {
+	visibility: hidden; /* ukrycie ikony */
+}
+
+/* styl dla zaznaczonej opcji sortowania */
+.sort-menu-content .sort-option.checked span {
+	visibility: visible; /* wyświetlenie ikony */
+}
+/* Koniec stylu dla sortowania */
+
+/* Początek stylu dla fiktrowania */
+/* styl dla otwartego menu filtrów */
+.filter-menu.open {
+	top: 6rem; /* pozycja menu po otwarciu */
+	opacity: 1; /* pełna przejrzystość */
+	display: flex; /* wyświetlenie menu */
+	flex-direction: column; /* układ elementów w kolumnie */
+	min-height: 45vh; /* minimalna wysokość menu */
+}
+
+/* styl dla kontenera filtrów */
+.filters-container {
+	width: 100%; /* szerokość 100% */
+	display: flex; /* układ elementów w linii */
+	justify-content: center; /* wyśrodkowanie elementów */
+	gap: 2rem; /* odstęp między elementami */
+}
+
+/* styl dla kontenera zagnieżdzonych opcji filtrów */
+.filter-option-container {
+	display: none; /* ukrycie kontenera */
+}
+
+/* styl dla otwartego kontenera zagnieżdzonych opcji filtrów */
+.filter-option-container.open {
+	padding: 1.2rem; /* wewnętrzny odstęp */
+	display: flex; /* wyświetlenie kontenera */
+	flex-direction: column; /* układ elementów w kolumnie */
+	gap: 1.2rem; /* odstęp między elementami */
+}
+
+/* styl dla przycisków otwierających zagnieżdzone listy opcji */
+.filter-option-btn {
+	font-family: "Poppins", sans-serif; /* rodzina czcionek */
+	font-size: 2rem; /* rozmiar czcionki */
+	display: flex; /* układ elementów w linii */
+	gap: 0.8rem; /* odstęp między elementami */
+	align-items: center; /* wyśrodkowanie elementów */
+	font-weight: 500; /* grubość czcionki */
+	border-left: 2px solid transparent; /* lewa krawędź ustawiona na przezroczystość*/
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla wszystkich właściwości */
+}
+
+/* styl dla kontenera filtrów z nazwą marki */
+.filter-option-container.filter-mark {
+	overflow-y: scroll; /* włączenie paska przewijania w pionie */
+	max-height: 20rem; /* maksymalna wysokość kontenera */
+}
+
+/* styl dla ikon zagnieżdzonych filtrów */
+.filter-option-container li span {
+	display: flex; /* układ ikony na flexbox */
+	align-items: center; /* wyśrodkowanie ikony w pionie */
+	justify-content: center; /* wyśrodkowanie ikony w poziomie */
+	width: 3rem; /* szerokość */
+	height: 3rem; /* wysokość */
+	color: var(--secondary100); /* kolor ikony */
+	visibility: hidden; /* ukrycie ikony */
+}
+
+/* styl dla zazanczonych ikon zagnieżdzonych filtrów */
+.filter-option-container li.checked span {
+	visibility: visible; /* wyświetlenie ikony */
+}
+
+/* styl dla zagnieżdzonej opcji filtrów */
+.filter-option-container li {
+	display: flex; /* układ elementów w linii */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów */
+	font-size: 1.8rem; /* rozmiar czcionki */
+	cursor: pointer; /* zmiana kursora na wskaźnik */
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla wszystkich właściwości */
+}
+
+/* styl dla stanu najechania i zaznaczonego elementu zagnieżdzonej opcji filtrów */
+.filter-option-container li:hover,
+.filter-option-container li.checked {
+	color: var(--secondary100); /* kolor tekstu */
+	padding-left: 1.2rem; /* wewnętrzny odstęp z lewej strony */
+	letter-spacing: 1px; /* odstęp między literami */
+}
+
+/* styl dla otwartego kontenera zagnieżdzonej opcji filtrów cenowych */
+.filter-option-container.filter-price.open {
+	margin-bottom: 2.4rem; /* odstęp od dołu */
+}
+
+/* styl dla ostatniej opcji filtru */
+.filter-option:last-of-type {
+	margin-bottom: 2.4rem; /* odstęp od dołu  */
+}
+
+/* styl dla stanu najechania i przycisku, w którym okno z zagnieżdzonymi filtrami jest otwarte */
+.filter-option:hover .filter-option-btn,
+.filter-option .filter-option-btn.open {
+	color: var(--primary100); /* kolor tekstu */
+	letter-spacing: 1px; /* odstęp między literami */
+	padding-left: 1.2rem; /* wewnętrzny odstęp z lewej strony */
+	border-color: var(--primary100); /* kolor obramowania */
+}
+
+/* styl dla ikony przycisku opcji filtrów */
+.filter-option .filter-option-btn span {
+	transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście */
+	transform: rotate(0deg); /* początkowa rotacja */
+}
+
+/* styl dla ikony przycisku opcji filtrów w stanie najechania i gdy okno z zagnieżdzonymi filtrami jest otwarte */
+.filter-option .filter-option-btn:hover span,
+.filter-option .filter-option-btn.open span {
+	transform: rotate(-90deg); /* obrót ikony */
+}
+/* styl dla przycisku zastosuj filtry */
+.apply-filters-btn {
+	margin: auto 0 2.4rem 0; /* marginesy */
+}
+/* styl dla kontenera wybranych filtrów */
+.selected-filters-container {
+	padding-bottom: 2.4rem; /* wewnętrzny odstęp na dole */
+	display: none; /* ukrycie kontenera */
+}
+/* styl dla tytułu wybranych filtrów */
+.selected-filters-container h3 {
+	width: 100%; /* szerokość 100% */
+	font-size: 2rem; /* rozmiar czcionki */
+}
+/* styl dla nagłówka wybranych filtrów */
+.selected-filters-header {
+	display: flex; /* układ elementów w linii */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów */
+	margin-bottom: 2rem; /* margines na dole */
+	gap: 2rem; /* odstęp między elementami */
+}
+/* styl dla przycisku wyczyść filtry w nagłówku wybranych filtrów */
+.selected-filters-header button {
+	margin: 0; /* usunięcie marginesów */
+	font-size: 1.6rem; /* rozmiar czcionki */
+	max-width: 16rem; /* maksymalna szerokość */
+}
+/* styl dla zawartości kontenera wybranych filtrów */
+.selected-filters-content {
+	display: flex; /* układ elementów w linii */
+	gap: 1.2rem; /* odstęp między elementami */
+	flex-wrap: wrap; /* zawijanie elementów */
+}
+/* styl dla przycisku usunięcia aktywnego filtra */
+.active-filter button {
+	display: flex; /* układ przycisku ustawiony na flexbox */
+	align-items: center; /* wyśrodkowanie przycisku w pionie */
+	justify-content: center; /* wyśrodkowanie przycisku w poziomie */
+}
+/* styl dla tekstu w aktywnym filtrze */
+.active-filter p {
+	font-size: 1.8rem; /* rozmiar czcionki */
+}
+/* styl dla aktywnego filtra */
+.active-filter {
+	display: flex; /* układ elementów w linii */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: center; /* wyśrodkowanie elementów w poziomie */
+	border: 1px solid var(--primary100); /* obramowanie */
+	cursor: pointer; /* zmiana kursora na wskaźnik */
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	gap: 1.2rem; /* odstęp między elementami */
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście dla wszystkich właściwości */
+}
+/* styl dla aktywnego filtra w stanie najechania kursorem */
+.active-filter:hover {
+	background: var(--primary100); /* kolor tła */
+	color: var(--black700); /* kolor tekstu */
+}
+/* styl dla przycisku usnięcia filtra, w aktywnym filtrze w stanie hover */
+.active-filter:hover button {
+	color: var(--black700); /* kolor tekstu */
+}
+/* Koniec stylu dla filtrowania */
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla paragrafu w kontenerze sklepu */
+	.shop-container > p,
+	.filters-container {
+		max-width: 60rem; /* maksymalna szerokość */
+		margin: 0 auto; /* wyśrodkowanie */
+	}
+	/* styl dla nagłówka h1 w kontenerze sklepu */
+	.shop-container h1 {
+		max-width: 60rem; /* maksymalna szerokość */
+		margin-top: 3rem; /* margines na górze */
+		margin-bottom: 0.8rem; /* margines na dole */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla głównego kontenera na stronie */
+	main {
+		background: linear-gradient(
+			90deg,
+			var(--black800),
+			var(--black500),
+			var(--black800)
+		); /* tło gradientowe, kąt 90 stopni, 3 kolory*/
+	}
+	/* styl dla kontenera sklepu */
+	.shop {
+		margin: 0; /* usunięcie marginesów */
+	}
+	/* styl dla kontenera wyświetlającego informacje o tym, że nie znaleziono produktów */
+	.not-found-container {
+		font-size: 160%; /* rozmiar czcionki */
+	}
+
+	/* styl dla nagłówka h1 i paragrafu w kontenerze sklepu */
+	.shop-container h1,
+	.shop-container > p {
+		grid-column: span 2; /* zajęcie dwóch kolumn */
+		max-width: 80rem; /* maksymalna szerokość */
+	}
+	/* styl dla głównego kontenera filtrów i sortowania */
+	.filters-container {
+		padding-right: 1.2rem; /* wewnętrzny odstęp po prawej stronie */
+		gap: unset; /* usunięcie odstępu */
+		max-height: calc(
+			80vh - 12rem
+		); /* maksymalna wysokość / odejmujemy od 80 jednostek wysokości strony 120 px*/
+		overflow-y: auto; /* włączenie paska przewijania w pionie */
+		position: sticky; /* przyklejenie do góry */
+		display: grid; /* ustawienie kontenera jako siatki */
+		top: 12rem; /* odległość od góry */
+		align-items: start; /* wyrównanie do góry */
+	}
+	/* styl dla kontenera zawierającego filtry związane z nazwami marek*/
+	.filter-option-container.filter-mark {
+		overflow: visible; /* wyłączenie ukrywania overflow */
+		max-height: unset; /* resetowanie maksymalnej wysokości */
+	}
+	/* styl dla sekcji wyświetlającej całą stronę sklepu */
+	.shop-container {
+		display: grid; /* ustawienie kontenera jako siatki */
+		gap: 1rem 2rem; /* odstęp między elementami */
+		grid-template-columns: 28rem 1fr; /* szerokość kolumn /  pierwsza kolumna 280px - miejsce na filtry i sortowanie / druga kolumna pozostałe miejsce*/
+		max-height: calc(
+			100vh - 12rem
+		); /* maksymalna wysokość / odejmujemy od całej wysokości ekranu 120 px*/
+		overflow-y: auto; /* włączenie paska przewijania w pionie */
+	}
+	/* ukrycie przycisków otwierających menu sortowania/filtrowania */
+	.filters-container > button {
+		display: none; /* ukrycie przycisku */
+	}
+	/* styl dla elementu nawigacji w menu sortowania */
+	.sort-menu-nav {
+		padding: 0; /* usunięcie wewnętrznego odstępu */
+		margin-bottom: 1.2rem; /* margines na dole */
+	}
+	/* styl dla menu sortowania i filtrowania */
+	.sort-menu,
+	.filter-menu {
+		background: unset; /* usunięcie tła */
+		position: relative; /* ustawienie pozycji jako względna */
+		padding: 0; /* usunięcie wewnętrznego odstępu */
+		height: auto; /* automatyczna wysokość */
+		top: 0; /* resetowanie pozycji */
+		opacity: 1; /* pełna przejrzystość */
+		overflow: visible; /* wyłączenie ukrywania overflow */
+		display: flex; /* ustawienie jako flexbox */
+		flex-direction: column; /* układ elementów w kolumnie */
+	}
+	/* ukrycie przycisków zamykania menu wybranego menu w nawigacji menu sortowania i filtrowania */
+	.sort-menu-nav button,
+	.filter-menu-nav button {
+		display: none; /* ukrycie przycisków */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1444px */
+@media screen and (min-width: 1444px) {
+	/* styl dla paragrafu w kontenerze sklepu*/
+	.shop-container > p {
+		max-width: 60vw; /* maksymalna szerokość / 60 jednostek szerokości ekranu */
+		margin-bottom: 4rem; /* margines na dole */
+	}
+	/* styl dla sekcji wyświetlającej całą stronę sklepu */
+	.shop-container {
+		padding: 1.2rem 4rem; /* wewnętrzny odstęp */
+		gap: 1rem 4rem; /* odstęp między elementami */
+		grid-template-columns: 35rem 1fr; /* szerokość kolumn /  pierwsza kolumna 350px - miejsce na filtry i sortowanie / druga kolumna pozostałe miejsce */
+	}
+	/* styl dla głównego kontenera filtrów i sortowania */
+	.filters-container {
+		padding-right: 4rem; /* wewnętrzny odstęp po prawej stronie */
+	}
+}

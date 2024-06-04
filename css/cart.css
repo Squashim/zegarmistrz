@@ -1,0 +1,228 @@
+/* Style stylizujące elementy na stronie cart.html */
+
+/* styl dla kontenera pojedynczego elementu w koszyku */
+.cart-item-container {
+	width: 100%; /* szerokość 100% */
+	display: flex; /* wyświetlanie w formie flexbox */
+	margin: 1rem 0; /* margines górny i dolny 10px, margines lewy i prawy 0 */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	justify-content: center; /* wyśrodkowanie elementów w poziomie */
+}
+/* styl dla kontenera z informacjami o zegarku */
+.watch-info {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	justify-content: space-around; /* równomierne rozmieszczenie elementów w przestrzeni */
+	padding: 0 1rem; /* wewnętrzny odstęp 0 na górze i na dole, 10px po lewej i po prawej */
+}
+/* styl dla kontenera z obrazem zegarka */
+.watch-img-container {
+	width: 100%; /* szerokość 100% */
+	max-width: 15rem; /* maksymalna szerokość 150px */
+}
+/* styl dla obrazu zegarka */
+.watch-img-container img {
+	max-width: 100%; /* maksymalna szerokość 100% */
+}
+/* styl dla kontenera z informacjami i przyciskami dla użytkownika */
+.watch-user {
+	margin: 1.2rem 0; /* margines górny i dolny 12px, margines lewy i prawy 0 */
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów w przestrzeni */
+}
+/* styl dla kontenera z cenami zegarka */
+.watch-price-container {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	align-items: center; /* wyśrodkowanie elementów w poziomie */
+}
+/* styl dla starej ceny zegarka */
+.watch-price-old {
+	text-decoration: line-through; /* przekreślenie tekstu */
+	opacity: 0.8; /* nieprzezroczystość 0.8 */
+}
+/* styl dla kontenera zawierającego ilość przedmiotów */
+.quantity-container {
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: center; /* wyśrodkowanie elementów w poziomie */
+	gap: 2rem; /* odstęp między elementami */
+}
+/* styl dla napisu będącego ilością przedmiotu */
+.quantity-container span {
+	color: var(--white100); /* kolor tekstu */
+	font-weight: 500; /* grubość tekstu */
+	font-size: 1.8rem; /* wielkość tekstu */
+}
+/* styl dla przycisków zwiększania i zmniejszania ilości produktu */
+.quantity-container button {
+	background-color: var(--white100); /* kolor tła biały */
+	padding: 0.4rem; /* wewnętrzny odstęp 4px */
+	color: var(--black700); /* kolor tekstu czarny */
+	font-family: "Poppins", sans-serif; /* czcionka Poppins */
+	width: 2.5rem; /* szerokość 25px */
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejścia wszystkich właściwości */
+}
+/* styl dla przycisków, których nie można kliknąć */
+.quantity-container button:disabled {
+	cursor: unset; /* kursor podstawowy */
+	opacity: 0.5; /* nieprzezroczystość 0.5 */
+}
+/* styl dla przycisków po najechanie, które nie są wyłączone */
+.quantity-container button:hover:not(:disabled) {
+	background: var(--primary100); /* kolor tła */
+}
+/* styl dla przycisku zmniejszenia ilości */
+.decrement {
+	border-radius: 0.8rem 0 0 0.8rem; /* promień zaokrąglenia: górny lewy 8px, dolny lewy 0, górny prawy 0, dolny prawy 8px */
+}
+/* styl dla przycisku zwiększenia ilości */
+.increment {
+	border-radius: 0 0.8rem 0.8rem 0; /* promień zaokrąglenia: górny lewy 0, dolny lewy 8px, górny prawy 8px, dolny prawy 0 */
+}
+/* styl dla nagłówka h3 w sekcji zawartości koszyka */
+.cart-content > h3 {
+	margin-bottom: 2.4rem; /* margines dolny 24px */
+	text-align: center; /* wyśrodkowanie tekstu */
+}
+/* styl dla nagłówka h2 w sekcji zawartości koszyka */
+.cart-content h2 {
+	text-align: center; /* wyśrodkowanie tekstu */
+}
+/* styl dla paska z przyciskami powrotu i wyczyszczenia koszyka */
+.cart-topbar {
+	display: flex; /* wyświetlanie w formie flexbox */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów w przestrzeni */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+}
+/* ukrycie napisów obok przycisków dla małych ekranów */
+.cart-topbar .span-text {
+	display: none; /* ukrycie tekstu */
+}
+/* styl dla informacji o pustym koszyku */
+.empty-cart-container {
+	display: flex; /* wyświetlanie w formie flexbox */
+	align-items: center; /* wyśrodkowanie elementów w pionie */
+	justify-content: center; /* wyśrodkowanie elementów w poziomie */
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 460px */
+@media screen and (min-width: 460px) {
+	/* styl dla kontenera pojedynczego elementu w koszyku */
+	.cart-item-container {
+		flex-direction: row; /* układanie elementów w rzędzie */
+		align-items: unset; /* wyzerowanie wyśrodkowania elementów w pionie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla sekcji całego koszyka */
+	.cart-container {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 2rem auto; /* margines 20px na górze i na dole, auto po lewej i po prawej */
+	}
+	/* styl dla kontenera pojedynczego elementu w koszyku */
+	.cart-item-container {
+		justify-content: space-between; /* równomierne rozmieszczenie elementów w przestrzeni */
+	}
+	/* styl dla kontenera z informacjami o zegarku */
+	.watch-info {
+		width: 100%; /* szerokość 100% */
+	}
+	/* styl dla przycisków powrotu i wyczyszczenia koszyka */
+	.cart-topbar button,
+	.cart-topbar a {
+		display: flex; /* wyświetlanie w formie flexbox */
+		align-items: center; /* wyśrodkowanie elementów w pionie */
+		gap: 2rem; /* odstęp między elementami 20px */
+		font-size: 1.8rem; /* wielkość tekstu 18px */
+		font-family: "Poppins", sans-serif; /* czcionka Poppins */
+		font-weight: 400; /* grubość tekstu */
+	}
+	/* wyświetlenie tekstu obok przycisków powrotu i wyświetlenia koszyka */
+	.cart-topbar .span-text {
+		display: block; /* wyświetlenie bloku tekstu */
+		transition: transform cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s; /* płynne przejście transformacji */
+	}
+	/* styl po najechaniu kursorem na tekst przycisku powrotu i wyświetlenia koszyka */
+	.cart-topbar .span-text:hover {
+		transform: scale(1.1); /* skalowanie 110% */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1100px */
+@media screen and (min-width: 1100px) {
+	/* styl dla głównego kontenera na stronie */
+	main {
+		background: linear-gradient(
+			90deg,
+			var(--black800),
+			var(--black500),
+			var(--black800)
+		); /* tło gradientowe, kąt 90 stopni, 3 kolory*/
+	}
+	/* styl dla paska z przyciskami powrotu i wyczyszczenia koszyka */
+	.cart-topbar {
+		max-width: 80rem; /* maksymalna szerokość 800px */
+		margin: 0 auto; /* wyzerowanie marginesu na górze i na dole, auto po lewej i po prawej */
+		margin-bottom: 2rem; /* margines dolny 20px */
+	}
+	/* styl dla sekcji całego koszyka */
+	.cart-container {
+		max-width: unset; /* brak maksymalnej szerokości */
+	}
+	/* styl dla zawartości koszyka */
+	.cart-content {
+		max-width: 90vw; /* maksymalna szerokość 90 jednostek szerokości ekranu */
+		display: grid; /* wyświetlanie w formie siatki */
+		grid-template-columns: repeat(
+			2,
+			1fr
+		); /* dwie kolumny o takiej samej szerokości */
+		margin: 0 auto; /* wyzerowanie marginesu na górze i na dole, auto po lewej i po prawej */
+	}
+	/* styl dla nagłówka h2 i przycisku kup produkty oraz lini poziomej oddzielającej elementy */
+	.cart-content > h2,
+	.cart-content > button,
+	.divider {
+		max-width: 60rem; /* maksymalna szerokość 600px */
+		margin: 2.4rem auto; /* margines 24px na górze i na dole, auto po lewej i po prawej */
+	}
+	/* styl dla nagłówka h2, h3 przycisku kup produkty oraz lini poziomej oddzielającej elementy */
+	.cart-content > h2,
+	.cart-content > h3,
+	.cart-content > button,
+	.divider {
+		grid-column: span 2; /* zajmowanie dwóch kolumn */
+	}
+	/* styl dla kontenera pojedynczego elementu w koszyku */
+	.cart-item-container {
+		padding: 1.8rem; /* wewnętrzny odstęp 18px */
+	}
+	/* styl dla kontenera z informacjami o zegarku */
+	.watch-info {
+		font-size: 1.8rem; /* wielkość tekstu 18px */
+		justify-content: space-between; /* równomierne rozmieszczenie elementów w poziomie */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1600px */
+@media screen and (min-width: 1600px) {
+	/* styl dla zawartości koszyka */
+	.cart-content {
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* trzy kolumny o takiej samej szerokości */
+	}
+	/* styl dla nagłówka h2, h3 przycisku kup produkty oraz lini poziomej oddzielającej elementy*/
+	.cart-content > h2,
+	.cart-content > h3,
+	.cart-content > button,
+	.divider {
+		grid-column: span 3; /* zajmowanie trzech kolumn */
+	}
+}

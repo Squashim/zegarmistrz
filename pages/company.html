@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - firmy</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony company.html -->
+		<link rel="stylesheet" href="../css/company.css" />
+		<!-- Dołączenie pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+		<!-- Dołączanie skryptów jako modułów, obsługujących stronę company.html, a także obsługujące stopkę. Użycie defer powoduje, że przeglądarka pobiera plik skryptu w tle, ale wykonuje go dopiero po załadowaniu całej struktury domukentu HTML -->
+		<script defer type="module" src="../js/pages/company.js"></script>
+		<script defer type="module" src="../js/handleFooter.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Logo strony wraz z przekierowaniem na główną stronę po kliknięciu-->
+			<a href="/zegarmistrz/index.html" class="logo">
+				<img src="../assets/logo_white.png" alt="logo" />
+			</a>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja główna strony, treść jest generowana dynamicznie -->
+			<section class="mark-section">
+				<!-- Nagłówek sekcji -->
+				<h1 class="mark-name"></h1>
+				<!-- Artykuł zawierający informacje o marce -->
+				<article class="mark-container">
+					<!-- Logo marki -->
+					<img class="mark-logo" src="#" alt="" />
+					<!-- Opis marki -->
+					<div class="mark-description">
+						<!-- Lokalizacja powstania firmy -->
+						<h3>
+							Miejsce powstania firmy:
+							<span class="primary-color location"></span>
+						</h3>
+						<!-- Data powstania firmy -->
+						<h3>
+							Data powstania firmy:
+							<span class="primary-color date"></span>
+						</h3>
+						<!-- Nagłówek historii marki -->
+						<h3>Historia:</h3>
+						<!-- Paragrafy z opisem historii marki -->
+						<p class="first-paragraph"></p>
+						<p class="second-paragraph"></p>
+						<p class="third-paragraph"></p>
+						<!-- Źródło informacji o marce, odnośnik jest otwierany w nowej karcie -->
+						<a class="source" href="#" target="_blank" rel="noopener noreferrer"
+							>Źródło informacji</a
+						>
+					</div>
+				</article>
+			</section>
+		</main>
+
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

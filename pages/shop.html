@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - sklep</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony shop.html -->
+		<link rel="stylesheet" href="../css/shop.css" />
+		<!-- Dołączenie do strony pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+
+		<!-- Dołączanie skryptów jako modułów, obsługujących stronę shop.html, a także obsługujące stopkę i nawigację. -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="../js/pages/shop.js"></script>
+		<script type="module" src="../js/handleNav.js"></script>
+		<script type="module" src="../js/handleFooter.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Nawigacja -->
+			<nav>
+				<!-- Link do strony głównej z logo -->
+				<a href="/zegarmistrz/index.html" class="logo">
+					<!-- Logo strony -->
+					<img src="../assets/logo_white.png" alt="logo" />
+				</a>
+				<!-- Lista głównych linków nawigacyjnych -->
+				<ul class="nav-links">
+					<!-- Pozycja w liście -->
+					<li class="nav-link">
+						<!-- Link do strony głównej -->
+						<a href="/zegarmistrz/index.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol domu -->
+								<span class="material-symbols-outlined"> home </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Strona główna</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony serwisowej -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony o nas -->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link" id="nav-login">
+						<!-- Link do strony logowania -->
+						<a href="/zegarmistrz/pages/login.html" class="nav-link-btn">
+							<!-- Ikona logowania-->
+							<div class="nav-link-icon">
+								<!-- Symbol logowania -->
+								<span class="material-symbols-outlined"> login </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zaloguj się</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Link do strony koszyka -->
+						<a href="/zegarmistrz/pages/cart.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol koszyka -->
+								<span class="material-symbols-outlined"> shopping_cart </span>
+							</div>
+							<!-- Ilość przedmiotów w koszyku -->
+							<span class="cart-quantity"></span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Koszyk</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Prrzycisk do wylogowania ze strony-->
+						<button class="nav-link-btn logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+						</button>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Przycisk przenoszący do menu -->
+						<button class="nav-group-menu nav-link-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol menu -->
+								<span class="material-symbols-outlined"> menu </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Menu</span>
+						</button>
+					</li>
+				</ul>
+
+				<!-- Lista rozwijanych linków nawigacyjnych widoczna na małych ekranach -->
+				<ul class="nav-links-dropdown">
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony serwisu -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony o nas-->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w rozwijanej liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link-dp nav-hidden">
+						<!-- Przycisk do wylogowania ze sklepu-->
+						<button class="nav-link-btn-dp logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon-dp">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Wyloguj się</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja zawierająca sklep -->
+			<section class="shop-container">
+				<!-- Nagłówek -->
+				<h1>Nasza oferta</h1>
+				<!-- Paragraf z opisem -->
+				<p>
+					Zachęcamy do zakupu naszych zegarków, których kolekcje skupiają się na
+					wysokiej jakości, ponadczasowym designie oraz funkcjonalności.
+					Zapraszamy do odkrycia produktów, które zachwycą nawet najbardziej
+					wymagających. Poniżej znajdziecie Państwo listę dostępnych modeli.
+					<!-- Odnośnik do źródła zdjęć -->
+					<a
+						href="https://zegarownia.pl/"
+						target="_blank"
+						class="source"
+						rel="noopener noreferrer"
+						>Źródło zdjęć zegarków</a
+					>
+				</p>
+
+				<!-- Kontener zawierający filtrowanie i sortowanie -->
+				<article class="filters-container">
+					<!-- Sortowanie -->
+					<!-- Przycisk otwierający menu sortowania -->
+					<button class="sortOpenBtn btn btn-secondary">Sortuj</button>
+					<!-- Menu sortowania -->
+					<div class="sort-menu">
+						<!-- Nagłówek menu sortowania -->
+						<div class="sort-menu-nav">
+							<h2>Sortuj według</h2>
+							<!-- Przycisk zamykający menu sortowania -->
+							<button class="sortCloseBtn">
+								<!-- Ikona zamykania -->
+								<span class="material-symbols-outlined btn-close"> close </span>
+							</button>
+						</div>
+						<!-- Zawartość menu sortowania -->
+						<ul class="sort-menu-content">
+							<!-- Opcja sortowania z atrybutem data oznaczającym tryb sortowania -->
+							<li class="sort-option" data-sort="popular">
+								<!-- Tekst opcji sortowania -->
+								Najpopularniejsze
+								<!-- Ikona oznaczająca zaznaczenie -->
+								<span class="material-symbols-outlined check-icon"> done </span>
+							</li>
+							<!-- Opcja sortowania z atrybutem data oznaczającym tryb sortowania -->
+							<li class="sort-option" data-sort="price-low">
+								<!-- Tekst opcji sortowania -->
+								Najniższa cena
+								<!-- Ikona oznaczająca zaznaczenie -->
+								<span class="material-symbols-outlined check-icon"> done </span>
+							</li>
+							<!-- Opcja sortowania z atrybutem data oznaczającym tryb sortowania -->
+							<li class="sort-option" data-sort="price-high">
+								<!-- Tekst opcji sortowania -->
+								Najwyższa cena
+								<!-- Ikona oznaczająca zaznaczenie -->
+								<span class="material-symbols-outlined check-icon"> done </span>
+							</li>
+							<!-- Opcja sortowania z atrybutem data oznaczającym tryb sortowania -->
+							<li class="sort-option" data-sort="new">
+								<!-- Tekst opcji sortowania -->
+								Najnowsze
+								<!-- Ikona oznaczająca zaznaczenie -->
+								<span class="material-symbols-outlined check-icon"> done </span>
+							</li>
+						</ul>
+						<!-- Przycisk resetujący opcje sortowania -->
+						<button class="btn btn-primary reset-sorting-btn">
+							Zresetuj sortowanie
+						</button>
+					</div>
+
+					<!-- Filtrowanie -->
+					<!-- Przycisk otwierający menu filtrów -->
+					<button class="filterOpenBtn btn btn-secondary">Filtruj</button>
+					<!-- Menu filtrów -->
+					<div class="filter-menu">
+						<!-- Nagłówek menu filtrów -->
+						<div class="filter-menu-nav">
+							<div>
+								<h2>Filtruj według</h2>
+								<!-- Podpowiedź -->
+								<p class="hint">
+									(aby zmodyfikować zaznaczone filtry zamknij wszystkie listy
+									rozwijane)
+								</p>
+							</div>
+							<!-- Przycisk zamykający menu filtrów -->
+							<button class="filterCloseBtn">
+								<!-- Ikona zamykania -->
+								<span class="material-symbols-outlined btn-close"> close </span>
+							</button>
+						</div>
+						<!-- Kontener wybranych filtrów, widoczny tylko po wybraniu co najmniej jednego filtra  -->
+						<div class="selected-filters-container">
+							<!-- Nagłówek wybranych filtrów -->
+							<div class="selected-filters-header">
+								<h3>Wybrane filtry:</h3>
+								<!-- Przycisk usuwający wszystkie aktywne filtry -->
+								<button class="btn btn-secondary removeAllFilters">
+									Usuń filtry
+								</button>
+							</div>
+							<!-- Zawartość wybranych filtrów -->
+							<div class="selected-filters-content"></div>
+						</div>
+
+						<!-- Lista opcji filtrowania -->
+						<ul class="filter-menu-content">
+							<!-- Filtr wyprzedaży -->
+							<li class="filter-option">
+								<!-- Przycisk otwierająct zagnieżdzone opcje filtrowania -->
+								<button class="filter-option-btn">
+									<!-- Tekst informujący o filtrze -->
+									Wyprzedaż
+									<!-- Ikona wskazująca możliwość rozwinięcia listy -->
+									<span class="material-symbols-outlined"> expand_more </span>
+								</button>
+								<!-- Lista zagnieżdzonych opcji filtrowania dotyczących wyprzedaży -->
+								<ul class="filter-option-container filter-sale">
+									<!-- Opcja filtrowania po wyprzedaży z atrybutem data oznaczającym tryb filtrowania -->
+									<li data-filter="Na wyprzedaży">
+										<!-- Tekst opcji filtru -->
+										<p>Na wyprzedaży</p>
+										<!-- Ikona wskazująca zaznaczenie opcji -->
+										<span class="material-symbols-outlined check-icon">
+											done
+										</span>
+									</li>
+									<!-- Opcja filtrowania nie po wyprzedaży z atrybutem data oznaczającym tryb filtrowania -->
+									<li data-filter="Nie na wyprzedaży">
+										<!-- Tekst opcji filtru -->
+										<p>Nie na wyprzedaży</p>
+										<!-- Ikona wskazująca zaznaczenie opcji -->
+										<span class="material-symbols-outlined check-icon">
+											done
+										</span>
+									</li>
+								</ul>
+							</li>
+							<!-- Filtr z markami zegarków -->
+							<li class="filter-option">
+								<!-- Przycisk otwierająct zagnieżdzone opcje filtrowania -->
+								<button class="filter-option-btn">
+									<!-- Tekst informujący o filtrze -->
+									Marki
+									<!-- Ikona wskazująca możliwość rozwinięcia listy -->
+									<span class="material-symbols-outlined"> expand_more </span>
+								</button>
+								<!-- Lista zagnieżdzonych opcji filtrowania dotyczących marki zegarków, generowana dynamicznie -->
+								<ul class="filter-option-container filter-mark"></ul>
+							</li>
+							<!-- Filtr ceny -->
+							<li class="filter-option">
+								<!-- Przycisk otwierająct zagnieżdzone opcje filtrowania -->
+								<button class="filter-option-btn">
+									<!-- Tekst informujący o filtrze -->
+									Cena
+									<!-- Ikona wskazująca możliwość rozwinięcia listy -->
+									<span class="material-symbols-outlined"> expand_more </span>
+								</button>
+								<!-- Formularz umożliwiający wprowadzenie zakresu cen -->
+								<form class="filter-option-container filter-price">
+									<!-- Pole wprowadzania minimalnej ceny -->
+									<label for="price-from">Zł</label>
+									<!-- Pole formularza z ograniczeniami wprowadzanych danych między innymi minimalna wartość, typ numeryczny, wprowadzanie tylko dodatnich liczb, skok o 0.01 -->
+									<input
+										class="custom-input"
+										type="number"
+										id="price-from"
+										min="0"
+										step="0.01"
+										title="Tylko liczby dodatnie"
+										oninput="validity.valid||(value='')"
+										placeholder="Od" />
+
+									<!-- Pole wprowadzania maksymalnej ceny -->
+									<label for="price-to">Zł</label>
+									<!-- Ograniczenia do wprowadzanych danych między innymi minimalna wartość, typ numeryczny, wprowadzanie tylko dodatkich liczb, skok o 0.01 -->
+									<input
+										class="custom-input"
+										type="number"
+										id="price-to"
+										min="0"
+										step="0.01"
+										title="Tylko liczby dodatnie"
+										oninput="validity.valid||(value='')"
+										placeholder="Do" />
+								</form>
+							</li>
+						</ul>
+						<!-- Przycisk do zastosowania aktywnych filtrów -->
+						<button class="apply-filters-btn btn btn-primary">Filtruj</button>
+					</div>
+				</article>
+
+				<!-- Sekcja wyświetlająca produkty -->
+				<article class="shop"></article>
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!--Określenie kodowania znaków dokumentu jako UTF-8, które umożliwia obsługę różnych znaków i symboli -->
+		<meta charset="UTF-8" />
+		<!--Ustawienie widoku strony na urządzeniach przenośnych, aby dopasował się do szerokości urządzenia i początkowego poziomu przybliżenia -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Tytuł strony widoczny na pasku zadań -->
+		<title>ZegarMistrz - o nas</title>
+		<!-- Dołączenie podstawowego arkusza stylów -->
+		<link rel="stylesheet" href="../css/style.css" />
+		<!-- Dołączenie styli odpowiadających za wygląd strony about.html -->
+		<link rel="stylesheet" href="../css/about.css" />
+		<!-- Dołączenie do strony pakietu ikon -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,1,0" />
+
+		<!-- Dołączanie skryptów jako modułów, obsługujących stopkę i nawigację. -->
+		<!-- Atrybut 'type=module' wskazuje, że skrypty są modułami ES6. Moduły ES6 są mechanizmem pozwalającym na importowanie i eksportowanie kodu między plikami JS -->
+		<script type="module" src="../js/handleNav.js"></script>
+		<script type="module" src="../js/handleFooter.js"></script>
+	</head>
+	<body>
+		<!-- Nagłówek strony -->
+		<header>
+			<!-- Nawigacja -->
+			<nav>
+				<!-- Link do strony głównej z logo -->
+				<a href="/zegarmistrz/index.html" class="logo">
+					<!-- Logo strony -->
+					<img src="../assets/logo_white.png" alt="logo" />
+				</a>
+				<!-- Lista głównych linków nawigacyjnych -->
+				<ul class="nav-links">
+					<!-- Pozycja w liście -->
+					<li class="nav-link">
+						<!-- Link do strony głównej -->
+						<a href="/zegarmistrz/index.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol domu -->
+								<span class="material-symbols-outlined"> home </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Strona główna</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony serwisowej -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Link do strony o nas -->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link" id="nav-login">
+						<!-- Link do strony logowania -->
+						<a href="/zegarmistrz/pages/login.html" class="nav-link-btn">
+							<!-- Ikona logowania-->
+							<div class="nav-link-icon">
+								<!-- Symbol logowania -->
+								<span class="material-symbols-outlined"> login </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Zaloguj się</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Link do strony koszyka -->
+						<a href="/zegarmistrz/pages/cart.html" class="nav-link-btn">
+							<!-- Ikona -->
+							<div class="nav-link-icon">
+								<!-- Symbol koszyka -->
+								<span class="material-symbols-outlined"> shopping_cart </span>
+							</div>
+							<!-- Ilość przedmiotów w koszyku -->
+							<span class="cart-quantity"></span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Koszyk</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link nav-hidden">
+						<!-- Prrzycisk do wylogowania ze strony-->
+						<button class="nav-link-btn logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+						</button>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link">
+						<!-- Przycisk przenoszący do menu -->
+						<button class="nav-group-menu nav-link-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon">
+								<!-- Symbol menu -->
+								<span class="material-symbols-outlined"> menu </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text">Menu</span>
+						</button>
+					</li>
+				</ul>
+
+				<!-- Lista rozwijanych linków nawigacyjnych widoczna na małych ekranach -->
+				<ul class="nav-links-dropdown">
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony sklepu -->
+						<a href="/zegarmistrz/pages/shop.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol zegarka -->
+								<span class="material-symbols-outlined"> watch </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Zegarki męskie</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony serwisu -->
+						<a href="/zegarmistrz/pages/service.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol klucza -->
+								<span class="material-symbols-outlined"> build </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Serwis</span>
+						</a>
+					</li>
+					<!-- Pozycja w liście-->
+					<li class="nav-link-dp">
+						<!-- Link do strony o nas-->
+						<a href="/zegarmistrz/pages/about.html" class="nav-link-btn-dp">
+							<!-- Ikona -->
+							<div class="nav-link-icon-dp">
+								<!-- Symbol grupy -->
+								<span class="material-symbols-outlined"> groups </span>
+							</div>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">O nas</span>
+						</a>
+					</li>
+					<!-- Pozycja w rozwijanej liście z klasą ukrywania widoczności, widoczna dla zalogowanych użytkowników -->
+					<li class="nav-link-dp nav-hidden">
+						<!-- Przycisk do wylogowania ze sklepu-->
+						<button class="nav-link-btn-dp logout-btn">
+							<!-- Ikona -->
+							<span class="nav-link-icon-dp">
+								<!-- Symbol wylogowania -->
+								<span class="material-symbols-outlined"> logout </span>
+							</span>
+							<!-- Tekst linku -->
+							<span class="nav-link-text-dp">Wyloguj się</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Główna treść strony -->
+		<main>
+			<!-- Sekcja zawierająca informacje "O nas" -->
+			<section class="about-container">
+				<h1>O nas</h1>
+				<!-- Nagłówek sekcji -->
+				<!-- Artykuł opisujący ogólne informacje o firmie -->
+				<article>
+					<h2>&#62; Ogólnie</h2>
+					<!-- Nagłówek podsekcji informacji ogólnych -->
+					<p>
+						<!-- Pargraf podsekcji informacji ogólnych, zawierający element span z tekstem w kolorze pierwszoplanowym -->
+						Jesteśmy małą polską firmą specjalizującą się w sprzedaży męskich
+						markowych <span class="primary-color">zegarków.</span> W naszym
+						sklepie znajdują się produkty od renomowanych producentów
+						światowych, takich jak Casio, Tommy Hilfiger, Tissot, Adriatica i
+						wielu innych. Oferujemy także mniej znane marki, które stopniowo
+						zdobywają coraz większą popularność.
+					</p>
+				</article>
+				<!-- Artykuł opisujący ogólne informacje o firmie -->
+				<article>
+					<h2>&#62; Bogata historia</h2>
+					<!-- Nagłówek podsekcji informacji ogólnych -->
+					<p>
+						<!-- Pargraf podsekcji informacji ogólnych, zawierający element span z tekstem w kolorze pierwszoplanowym -->
+						Historia naszej firmy sięga 2018 roku, wówczas oferowaliśmy
+						wyłącznie wybrane modele za pośrednictwem sprzedaży internetowej.
+						Wraz ze wzrostem liczby klientów firma zyskała dużą renomę. Grono
+						zadowolonych klientów świadczy o
+						<span class="primary-color">jakości</span> naszych produktów i
+						usług, które niezmiennie od początku powstania firmy, oferujemy
+						państwu.
+					</p>
+				</article>
+				<!-- Artykuł opisujący ogólne informacje o firmie -->
+				<article>
+					<h2>&#62; Oryginalne produkty</h2>
+					<!-- Nagłówek podsekcji informacji ogólnych -->
+					<p>
+						<!-- Pargraf podsekcji informacji ogólnych, zawierający element span z tekstem w kolorze pierwszoplanowym -->
+						Nasze główne zasady to uczciwe podejście do każdego klienta. Dlatego
+						w naszej ofercie znajdziecie państwo wyłącznie
+						<span class="primary-color">oryginalne</span> produkty, które
+						sprowadzane są prosto od oryginalnych dystrybutorów.
+					</p>
+				</article>
+				<!-- Artykuł opisujący ogólne informacje o firmie -->
+				<article>
+					<h2>&#62; Wszystko w jednym miejscu</h2>
+					<!-- Nagłówek podsekcji informacji ogólnych -->
+					<p>
+						<!-- Pargraf podsekcji informacji ogólnych, zawierający element span z tekstem w kolorze pierwszoplanowym -->
+						Dzięki stałemu rozwojowi i zainteresowaniu ze strony klientów,
+						zakupy możecie Państwo zrobić w naszym salonie. Co więcej w naszej
+						siedzibie zlokalizowany jest warsztat, którego obsługą zajmują się
+						najlepiej
+						<span class="primary-color">wykwalifikowani pracownicy.</span>
+						Pomogą oni Panśtwu z wyborem nowego zakupu, a także zajmą się
+						naprawą uszkodzonego sprzętu. Adres lokalu podany jest poniżej.
+						Serdecznie zapraszamy i życzymy udanych zakupów.
+					</p>
+				</article>
+			</section>
+			<!-- Sekcja zajmująca całą szerokość ekranu -->
+			<section class="wide-section">
+				<!-- Artykuł zawierający sekcję kontaktową -->
+				<article class="contact-container">
+					<!-- Informacje ogólne -->
+					<div class="information">
+						<h2>&#62; Skontaktuj się z nami</h2>
+						<!-- Nagłówek podsekcji informacji kontaktowych -->
+						<p>
+							Jeśli masz pytania dotyczące naprawy lub chcesz umówić się na
+							wizytę, skontaktuj się z nami telefonicznie, drogą mailową lub w
+							placówce naszej firmy. Znajdziesz nasz na mapie poniżej.
+						</p>
+					</div>
+					<!-- Dane kontaktowe-->
+					<div class="contact">
+						<h3>Kontakt</h3>
+						<p><b>Telefon: 81 241 96 21</b></p>
+						<div>
+							<p>Pn.-Pt.: 8:00 - 17:00</p>
+							<p>Sb.: 10:00 - 14:00</p>
+						</div>
+						<p><b>Email: zegarmistrz@sklep.pl</b></p>
+					</div>
+					<!-- Pozioma linia odzielająca kontenery -->
+					<hr />
+					<!-- Adres-->
+					<div class="address">
+						<h3>Adres firmy</h3>
+						<p>VIVO! Lublin, lokal 14</p>
+						<p>al. Unii Lubelskiej 2</p>
+						<p>20-108 Lublin</p>
+					</div>
+					<!-- Mapa z lokalizacją firmy -->
+					<div class="map-container">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2497.3331920615724!2d22.573697677068285!3d51.249774329490414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4722573f8436e0f3%3A0x6e863f34074b6b19!2sVIVO*21%20Lublin!5e0!3m2!1spl!2spl!4v1713046420799!5m2!1spl!2spl"
+							width="600"
+							height="450"
+							style="border: 0"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</article>
+			</section>
+		</main>
+		<!-- Stopka strony -->
+		<footer>
+			<!-- Kontener pierwszej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do polityki prywatności -->
+				<button class="policy">Polityka prywatności</button>
+				<!-- Przycisk przenoszący do regulaminu sklepu -->
+				<button class="regulations">Regulamin sklepu</button>
+			</div>
+			<!-- Kontener drugiej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Informacja o prawach autorskich -->
+				<p>&copy; 2024 Zegarmistrz™ Wszelkie prawa zastrzeżone.</p>
+			</div>
+			<!-- Kontener trzeciej sekcji stopki -->
+			<div class="footer-container">
+				<!-- Przycisk przenoszący do warunków wymiany i zwrotu -->
+				<button class="return-conditions">
+					<!-- Tekst przycisku -->
+					Warunki wymiany i zwrotu zakupionych towarów
+				</button>
+			</div>
+		</footer>
+	</body>
+</html>

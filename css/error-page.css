@@ -1,0 +1,29 @@
+/* Style stylizujące elementy na stronie 404.html */
+
+/* styl dla kontenera zawierającego logo strony */
+.logo {
+	max-width: 120rem; /* maksymalna szerokość 1200px */
+	margin: 0 auto; /* automatyczne wyśrodkowanie */
+}
+/* styl dla zdjęcia logo strony */
+.logo img {
+	width: 15rem; /* szerokość logo 150px */
+}
+.wrong-page-section {
+	min-height: calc(
+		100vh - 6rem
+	); /* minimalna wysokość / odejmujemy od wysokości strony 60 px*/
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+}
+.wrong-page-section .container {
+	display: flex; /* wyświetlanie w formie flexbox */
+	flex-direction: column; /* układanie elementów w kolumnie */
+	text-align: center; /* wyśrodkowanie tekstu  */
+}
+.wrong-page-section .container h3 {
+	font-size: 15rem; /* wielkość tekstu 150px */
+	opacity: 0.5; /* nieprzezroczystość 0.5 */
+	margin: 4rem 0; /* margines 40px na górze i na dole, 0 po lewej i po prawej */
+	line-height: 1; /* wysokość wiersza 1 */
+}

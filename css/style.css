@@ -1,0 +1,714 @@
+/* Globalne style *
+
+/* Dodanie czcionki Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Ustawienie zmiennych zawierających użyte na stronie kolory */
+:root {
+	--black800: #242424;
+	--black700: #2b2b2b;
+	--black500: #3a3a3a;
+
+	--brown100: #b6a39e;
+	--brown200: #948b89;
+
+	--white100: #fefefe;
+	--primary100: #1ebc9c;
+
+	--secondary100: #b8c669;
+
+	--error: #ff5666;
+
+	--hoverlight: #188d75;
+	--hoverdark: #191919;
+}
+
+/* Zresetowanie domyślnych ustawień */
+* {
+	box-sizing: border-box; /* elementy uwzględniają padding i border w swojej szerokości */
+	margin: 0; /* zerowanie marginesów */
+	padding: 0; /* zerowanie paddingu */
+}
+
+/* Stylowanie paska przewijania - początek */
+::-webkit-scrollbar {
+	width: 1rem; /* szerokość paska przewijania */
+}
+
+::-webkit-scrollbar-track {
+	background: var(--white100); /* kolor tła ścieżki paska przewijania */
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--black700); /* kolor samego paska przewijania */
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(
+		--hoverlight
+	); /* kolor paska przewijania po najechaniu myszą */
+}
+/* Stylowanie paska przewijania - koniec */
+
+/* Stylowanie podstawowych znaczników HTML - początek */
+html {
+	font-size: 10px; /* wielkość czcionki bazowej */
+}
+a {
+	text-decoration: none; /* brak podkreślenia dla linków */
+	color: inherit; /* dziedziczenie koloru tekstu */
+}
+body {
+	color: var(--white100); /* kolor tekstu */
+	background: var(--black500); /* kolor tła */
+	font-family: "Poppins", sans-serif; /* czcionka */
+	min-height: 100vh; /* minimalna wysokość ekranu */
+	display: flex; /* wyświetlanie jako flexbox */
+	flex-direction: column; /* układanie w kolumnie */
+	font-weight: 400; /* grubość czcionki */
+	font-style: normal; /* styl czcionki */
+	font-size: 1.6rem; /* rozmiar czcionki */
+	position: relative; /* pozycja relatywna */
+}
+button {
+	background: none; /* brak tła */
+	color: var(--white100); /* kolor tekstu */
+	outline: none; /* brak obramowania po aktywowaniu */
+	border: none; /* brak obramowania */
+	cursor: pointer; /* zmiana kursora na wskaźnik */
+	font-family: "Poppins", sans-serif; /* czcionka */
+}
+li {
+	list-style: none; /* brak domyślnego stylu listy */
+}
+
+main {
+	width: 100%; /* szerokość na 100% */
+	padding: 6rem 0 0 0; /* wewnętrzny odstęp na górze */
+	overflow-x: hidden; /* ukrywanie przewijania poziomego */
+	flex-grow: 1; /* element rośnie, aby wypełnić przestrzeń */
+}
+article {
+	margin: 1rem 0; /* marginesy */
+}
+section {
+	padding: 1.2rem; /* wewnętrzny odstęp */
+}
+h1 {
+	text-align: center; /* wyśrodkowanie tekstu */
+	font-size: 2.6rem; /* rozmiar czcionki */
+	color: var(--primary100); /* kolor tekstu */
+	border: 1px solid var(--primary100); /* obramowanie */
+	margin: 2.4rem 0; /* marginesy */
+}
+/* Stylowanie podstawowych znaczników HTML - koniec */
+
+/* Stylowanie okna dialogowego - początek */
+dialog {
+	position: fixed; /* pozycja elementu - stała */
+	top: 50%; /* odległość od góry ekranu */
+	left: 50%; /* odległość od lewej krawędzi ekranu */
+	transform: translate(-50%, -50%); /* przesunięcie do środka ekranu */
+	z-index: 50; /* indeks warstwy */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	background-color: var(--black800); /* kolor tła */
+	border: 2px solid var(--secondary100); /* obramowanie */
+	color: var(--white100); /* kolor tekstu */
+	width: 90%; /* szerokość */
+}
+/* styl dla zawartości okna dialogowego */
+.dialog-container {
+	text-align: center; /* wyśrodkowanie tekstu */
+	display: flex; /* wyświetlanie jako flexbox */
+	flex-direction: column; /* układanie w kolumnie */
+	justify-content: center; /* wyśrodkowanie w pionie */
+	align-items: center; /* wyśrodkowanie w poziomie */
+	padding: 1.2rem; /* wewnętrzny odstęp */
+}
+/* styl dla kontenera z przyciskami w oknie dialogowym */
+.dialog-container .buttons {
+	margin-top: 2.4rem; /* margines od góry */
+	display: flex; /* wyświetlanie jako flexbox */
+	justify-content: space-between; /* równomierne rozłożenie przycisków */
+	flex-direction: column; /* układanie w kolumnie */
+}
+/* styl dla tła okna dialogowego */
+.background {
+	position: absolute; /* pozycja elementu - stała */
+	top: 0px; /* odległość od góry ekranu */
+	right: 0px; /* odległość od prawej krawędzi ekranu */
+	bottom: 0px; /* odległość od dolnej krawędzi ekranu */
+	left: 0px; /* odległość od lewej krawędzi ekranu */
+	z-index: 49; /* indeks warstwy */
+	background: rgba(0, 0, 0, 0.5); /* kolor tła z przezroczystością */
+	backdrop-filter: blur(0.5rem); /* efekt rozmycia tła */
+}
+/* Stylowanie okna dialogowego - koniec */
+
+/* Stylowanie stopki - początek */
+footer {
+	position: relative; /* pozycja elementu - względna */
+	min-height: 6rem; /* minimalna wysokość */
+	padding: 0 1.2rem; /* wewnętrzny odstęp */
+	left: 0; /* odległość od lewej krawędzi */
+	bottom: 0; /* odległość od dolnej krawędzi */
+	width: 100%; /* szerokość */
+	background: var(--black700); /* kolor tła */
+	display: flex; /* wyświetlanie jako flexbox */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	flex-direction: column; /* układanie w kolumnie */
+	text-align: center; /* wyśrodkowanie tekstu */
+	box-shadow: 0 0 4rem 0.7rem var(--black800); /* cień */
+}
+/* styl dla kontenerów w stopce */
+footer .footer-container {
+	display: flex; /* wyświetlanie jako flexbox */
+	gap: 0.4rem; /* odstęp między elementami */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+}
+/* styl dla przycisków w kontenerze ze stopką */
+footer .footer-container button {
+	padding: 0 0.8rem; /* wewnętrzny odstęp */
+	font-size: 1.6rem; /* rozmiar czcionki */
+	display: block; /* wyświetlanie jako blok */
+	text-decoration: underline; /* podkreślenie */
+}
+/* styl dla okna dialogowego ze stopki */
+.dialog-footer {
+	text-align: center; /* wyśrodkowanie tekstu */
+	display: flex; /* wyświetlanie jako flexbox */
+	flex-direction: column; /* układanie w kolumnie */
+	align-items: center; /* wyśrodkowanie w pionie */
+	padding: 1.2rem; /* wewnętrzny odstęp */
+	overflow-y: auto; /* przewijanie pionowe */
+	max-height: 80vh; /* maksymalna wysokość */
+}
+/* styl nagłówka h2 w oknie dialogowym stopki */
+.dialog-footer h2 {
+	font-size: 1.6rem; /* rozmiar czcionki */
+}
+/* styl paragrafu w oknie dialogowym stopki */
+.dialog-footer p {
+	font-size: 1.4rem; /* rozmiar czcionki */
+}
+/* Stylowanie stopki - koniec */
+
+/* Stylizowanie menu nawigacji - początek */
+header {
+	position: fixed; /* pozycja elementu - stała */
+	width: 100%; /* szerokość */
+	padding: 0 1.2rem; /* wewnętrzny odstęp poziomy */
+	background: var(--black700); /* kolor tła */
+	z-index: 40; /* indeks warstwy */
+	box-shadow: 0 0 4rem 0.7rem var(--black800); /* cień */
+}
+nav {
+	width: 100%; /* szerokość */
+	height: 6rem; /* wysokość */
+	max-width: 120rem; /* maksymalna szerokość */
+	margin: 0 auto; /* automatyczne marginesy poziome */
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: space-between; /* równomierne rozmieszczenie elementów */
+}
+/* klasa ukrywająca elementy w nawigacji */
+.nav-hidden {
+	display: none !important; /* ukrywanie nawigacji (ważniejsze od innych reguł) */
+}
+/* styl dla kontenera zawierającego logo strony */
+.logo {
+	display: flex; /* wyświetlanie jako flexbox */
+	max-width: 15rem; /* maksymalna szerokość */
+}
+/* styl dla logo strony */
+.logo > img {
+	max-width: 100%; /* maksymalna szerokość obrazu */
+}
+/* styl dla listy zawierającej wszystkie przyciski nawigacji */
+.nav-links {
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	gap: 0.8rem; /* odstęp między elementami */
+	font-weight: 500; /* waga czcionki */
+}
+/* styl dla pojedycznego przycisku w nawigacji, sama ikona */
+.nav-link,
+.nav-link-dp {
+	cursor: pointer; /* kursor wskaźnika */
+}
+/* ukrywanie niektórych elementów nawigacji */
+.nav-links .nav-link:nth-child(2),
+.nav-links .nav-link:nth-child(3),
+.nav-links .nav-link:nth-child(4),
+.nav-links .nav-link:nth-child(7) {
+	display: none; /* ukrywanie wybranych elementów */
+}
+/* styl dla przycisku w nawigacji, ikona wraz z tekstem */
+.nav-link-btn {
+	position: relative; /* pozycja elementu - względna */
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	background: var(--black800); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+}
+/* styl dla przycisku nawigacji, i ilości przedmiotów w koszyku po najechaniu */
+.nav-link-btn:hover,
+.nav-link-btn:hover .cart-quantity {
+	background: var(--hoverdark); /* kolor tła po najechaniu */
+}
+/* styl dla aktywnego przycisku nawigacyjnego */
+.nav-link.active .nav-link-btn {
+	background: var(--primary100); /* kolor tła aktywnego przycisku */
+}
+/* styl dla aktywnego przycisku nawigacji, i ilości przedmiotów w koszyku po najechaniu */
+.nav-link.active .nav-link-btn:hover,
+.nav-link.active .nav-link-btn:hover .cart-quantity {
+	background: var(
+		--hoverlight
+	); /* kolor tła po najechaniu na aktywny przycisk */
+}
+/* styl dla kontenera na ikonę w przycisku nawigacji, także w przycisku nawigacji rozwijanej */
+.nav-link-icon,
+.nav-link-icon-dp {
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+}
+/* styl dla tekstu w linkach nawigacji */
+.nav-links .nav-link-text {
+	display: none; /* ukrywanie tekstu wewnątrz przycisków */
+}
+/* styl dla rozwijanego menu linków nawigacji */
+.nav-links-dropdown {
+	position: absolute; /* pozycja bezwzględna */
+	top: 6rem; /* odległość od góry */
+	right: 1.2rem; /* odległość od prawej krawędzi */
+	height: 0px; /* domyślna wysokość ukrytego menu */
+	left: 1.2rem; /* odległość od lewej krawędzi */
+	overflow: hidden; /* ukrywanie zawartości poza obszarem */
+	background: var(--black700); /* kolor tła */
+	font-weight: 500; /* waga czcionki */
+	border-radius: 0 0 0.8rem 0.8rem; /* zaokrąglenie rogów */
+	box-shadow: inset 0px 0px 30px 0px rgb(38, 38, 38); /* cień */
+	transition: height 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* płynne przejście wartości height */
+}
+/* styl dla otwartego menu rozwijanych linków nawigacji */
+.nav-links-dropdown.open {
+	height: 23rem; /* wysokość rozwiniętego menu */
+}
+/* styl dla przycisku nawigacji w menu rozwijanym */
+.nav-link-btn-dp {
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: flex-start; /* wyśrodkowanie w poziomie */
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	gap: 1.2rem; /* odstęp między elementami */
+	width: 100%; /* szerokość */
+}
+/* styl dla ikony w przycisku nawigacji w menu rozwijanym */
+.nav-link-icon-dp {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	gap: 1.2rem; /* odstęp między elementami */
+	background: var(--black800); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+}
+/* styl dla linku nawigacyjnego w rozwijanym menu nawigacji */
+.nav-link-dp {
+	margin: 0 0.8rem; /* marginesy zewnętrzne */
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: flex-start; /* wyśrodkowanie w poziomie */
+}
+/* styl dla tekstu przycisku nawigacyjnego w rozwijanym menu nawigacji */
+.nav-link-text-dp {
+	font-size: 1.6rem; /* wielkość tekstu 16px */
+}
+/* styl dla ikony aktywnego przycisku nawigacyjnego w menu rozwijanym */
+.nav-link-dp.active .nav-link-icon-dp {
+	background: var(--primary100); /* kolor tła dla ikony przycisku nawigacji */
+}
+/* styl dla tekstu aktywnego przycisku nawigacyjnego w menu rozwijanym */
+.nav-link-dp.active .nav-link-text-dp {
+	color: var(--primary100); /* kolor aktywnego tekstu */
+}
+/* styl dla ikony po najechaniu na przycisk nawigacji w menu rozwijanym */
+.nav-link-dp:hover .nav-link-icon-dp {
+	background-color: var(--hoverdark); /* kolor tła ikony */
+}
+/* styl dla ikony po najechaniu aktywnego przycisku nawigacyjnego w menu rozwijanym */
+.nav-link-dp.active:hover .nav-link-icon-dp {
+	background-color: var(--hoverlight); /* kolor tła ikony */
+}
+/* styl dla elementu wyświetlającego ilość przedmiotów w koszyku */
+.cart-quantity {
+	display: none; /* ukrywanie */
+	position: absolute; /* pozycja bezwzględna */
+	align-items: center; /* wyśrodkowanie w pionie */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	border-radius: 50%; /* promień zaokrąglenia - okrągły */
+	width: 2.2rem; /* szerokość */
+	height: 2.2rem; /* wysokość */
+	top: -0.5rem; /* odległość od górnej krawędzi */
+	left: 2.5rem; /* odległość od lewej krawędzi */
+	font-size: 1.8rem; /* wielkość tekstu */
+}
+/* styl dla elementu wyświetlającego ilość przedmiotów w koszyku */
+.nav-link .nav-link-btn .cart-quantity {
+	background-color: var(--black800); /* kolor tła liczby elementów w koszyku */
+}
+/* styl dla elementu wyświetlającego ilość przedmiotów w koszyku, gdy jest on aktywny */
+.nav-link.active .nav-link-btn .cart-quantity {
+	background-color: var(
+		--primary100
+	); /* kolor tła liczby elementów w koszyku */
+}
+/* Stylizowanie menu nawigacji - koniec */
+
+/* Stylizowanie klas użytych wieloktronie na stronie - początek */
+/* styl dla klasy z przyciskami oferty firmy */
+.btn-nav-offer {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	background: var(--brown100); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	color: var(--black700); /* kolor tekstu */
+}
+/* styl dla odnośnika ze źródłem */
+.source {
+	display: block; /* wyświetlanie jako blok */
+	text-decoration: underline; /* podkreślenie tekstu */
+	text-align: right; /* wyśrodkowanie tekstu do prawej */
+	padding-right: 2vw; /* wewnętrzny prawy odstęp */
+	opacity: 0.6; /* przeźroczystość */
+	cursor: pointer; /* kursor */
+	width: 100%; /* szerokość 100% */
+	margin: 0 auto; /* wyśrodkowanie */
+}
+/* styl klasy z przyciskiem zamykania */
+.btn-close {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	background: var(--white100); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	color: var(--black800); /* kolor tekstu */
+	transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s; /* płynna animacja */
+}
+/* styl klasy z przyciskiem zamykania po najechaniu na niego */
+.btn-close:hover {
+	background-color: var(--primary100); /* kolor tła po najechaniu */
+}
+/* styl dla przycisków, które są do wykorzystania przez użytkownika */
+.btn-user {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	background: var(--secondary100); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	color: var(--black800); /* kolor tekstu */
+	transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s; /* płynna animacja */
+	border: 1px solid var(--secondary100); /* obramowanie */
+}
+/* styl dla przycisków, które są do wykorzystania przez użytkownika po najechaniu na nie */
+.btn-user:hover {
+	background-color: transparent; /* przejrzyste tło po najechaniu */
+	color: var(--secondary100); /* kolor tekstu po najechaniu */
+}
+/* styl dla przycisku elementu listy */
+.btn-li {
+	display: flex; /* wyświetlanie jako flexbox */
+	gap: 0.8rem; /* odstęp między elementami */
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	align-items: center; /* wyśrodkowanie w pionie */
+	text-align: center; /* wyśrodkowanie tekstu */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	color: var(--black700); /* kolor tekstu */
+	background: var(--brown100); /* kolor tła */
+}
+/* styl dla przycisku elementu listy po najechaniu na niego */
+.btn-li:hover {
+	background: var(--brown200); /* kolor tła po najechaniu */
+}
+/* styl dla klasy zaznaczonej ikony */
+.check-icon {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	background: var(--black800); /* kolor tła */
+	border-radius: 0.8rem; /* promień zaokrąglenia */
+	color: var(--primary100); /* kolor ikony */
+}
+/* styl dla przycisku wielu kroków */
+.btn-step {
+	padding: 0.8rem; /* wewnętrzny odstęp */
+	border-radius: 50%; /* promień zaokrąglenia */
+	border: 2px solid var(--primary100); /* obramowanie */
+	color: var(--primary100); /* kolor tekstu */
+	background: var(--black700); /* kolor tła */
+	z-index: 1; /* indeks warstwy */
+}
+/* styl dla przycisku */
+.btn {
+	width: 100%; /* szerokość */
+	font-family: "Poppins", sans-serif; /* wybrana czcionka */
+	display: flex; /* wyświetlanie jako flexbox */
+	justify-content: center; /* wyśrodkowanie w poziomie */
+	align-items: center; /* wyśrodkowanie w pionie */
+	margin: 1.2rem 0; /* margines */
+	font-size: 1.8rem; /* wielkość tekstu */
+	padding: 0.8rem 1.2rem; /* wewnętrzny odstęp */
+	font-weight: 500; /* waga czcionki */
+	letter-spacing: 2px; /* odstępy między literami */
+	transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s; /* płynna animacja */
+}
+/* styl dla przycisku pierwszoplanowego */
+.btn-primary {
+	color: var(--black500); /* kolor tekstu */
+	background: var(--primary100); /* kolor tła */
+	border: 1px solid transparent; /* transparentne obramowanie */
+}
+/* styl dla przycisku pierwszoplanowego po najechaniu na niego*/
+.btn-primary:hover {
+	background: var(--black800); /* kolor tła po najechaniu */
+	color: var(--primary100); /* kolor tekstu po najechaniu */
+	border-color: var(--primary100); /* kolor obramowania po najechaniu */
+}
+/* styl dla przycisku pierwszoplanowego po najechaniu na niego */
+.btn-primary:hover .btn-arrow {
+	animation: arrow-right 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) infinite; /* animacja strzałki w nieskończoność */
+}
+/* animacja strzałki */
+@keyframes arrow-right {
+	/* początek animacji */
+	0% {
+		transform: translate(-1rem, 2px); /* transformacja - przesunięcie */
+		opacity: 0; /* przezroczystość */
+	}
+	/* koniec animacji */
+	100% {
+		transform: translate(2rem);
+		opacity: 1; /* przezroczystość */
+	}
+}
+/* styl dla przycisku drugoplanowego */
+.btn-secondary {
+	color: var(--black700); /* kolor tekstu */
+	background: var(--secondary100); /* kolor tła */
+	border: 1px solid var(--secondary100); /* obramowanie */
+}
+/* styl dla przycisku drugoplanowego po najechaniu na niego */
+.btn-secondary:hover {
+	color: var(--secondary100); /* kolor tekstu po najechaniu */
+	background: var(--black700); /* kolor tła po najechaniu */
+}
+/* styl dla elementu podziału sekcji */
+.divider {
+	margin: 2rem 0; /* margines */
+	display: block; /* wyświetlanie jako blok */
+	text-align: center; /* wyśrodkowanie tekstu */
+	width: 100%; /* szerokość */
+	position: relative; /* pozycja względna */
+}
+/* styl dla pseudoelementu ::before elementu podziału sekcji */
+.divider::before {
+	content: ""; /* treść pseudoelementu */
+	position: absolute; /* pozycja bezwzględna */
+	right: 0; /* odległość od prawej krawędzi */
+	background-color: var(--white100); /* kolor tła */
+	height: 2px; /* wysokość */
+	top: 1rem; /* odległość od górnej krawędzi */
+	width: 44%; /* szerokość */
+}
+/* styl dla pseudoelementu ::after elementu podziału sekcji */
+.divider::after {
+	content: ""; /* treść po pseudoelementem */
+	position: absolute; /* pozycja bezwzględna */
+	left: 0; /* odległość od lewej krawędzi */
+	background-color: var(--white100); /* kolor tła */
+	height: 2px; /* wysokość */
+	top: 1rem; /* odległość od górnej krawędzi */
+	width: 44%; /* szerokość */
+}
+/* styl dla klasy wskazówki dla użytkownika */
+.hint {
+	line-height: 1; /* wysokość wiersza */
+	margin-right: 2rem; /* margines z prawej strony */
+	font-size: 1.5rem; /* wielkość tekstu */
+}
+/* styl dla niestandardowego pola formularza */
+.custom-input {
+	width: 100%; /* szerokość */
+	outline: none; /* brak obramowania */
+	border: 1px solid var(--black800); /* obramowanie */
+	font-size: 1.8rem; /* wielkość tekstu */
+	padding: 0.8rem 1.2rem; /* wewnętrzny odstęp */
+	background: var(--white100); /* kolor tła */
+}
+/* styl dla domyślnego tekstu wpisanego w pole formularza */
+.custom-input::placeholder {
+	opacity: 0.7; /* przejrzystość */
+	opacity: 0.7;
+}
+/* styl dla poprawnie uzupełnionego pola formularza */
+.custom-input:valid {
+	border-left: 0.5rem solid var(--primary100);
+}
+/* styl dla elementu błędu formularza */
+.error {
+	width: 100%; /* szerokość */
+	display: flex; /* wyświetlanie jako flexbox */
+	align-items: center; /* wyśrodkowanie w pionie */
+	padding: 0 0.8rem; /* wewnętrzny odstęp */
+	background: var(--error); /* kolor tła */
+	color: var(--black800); /* kolor tekstu */
+}
+/* styl dla pustego elementu błędu formularza */
+.error:empty {
+	display: none; /* ukrywanie, jeśli pusty */
+}
+/* styl dla elementu będącego w kolorze pierwszoplanowym */
+.primary-color {
+	font-weight: 500; /* waga czcionki */
+	color: var(--primary100); /* kolor tekstu */
+}
+/* styl dla szerokiej sekcji */
+.wide-section {
+	padding: 2.4rem 1.2rem; /* wewnętrzny odstęp */
+	background-color: var(--black700); /* kolor tła */
+}
+/* Stylizowanie klas użytych wieloktronie na stronie - koniec */
+
+/* Obsługa responsywności strony za pomocą media query */
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 510px */
+@media screen and (min-width: 510px) {
+	/* styl dla okna dialogowego */
+	dialog {
+		padding: 2.4rem 0; /* wewnętrzny odstęp */
+		max-width: 60rem; /* maksymalna szerokość */
+	}
+	/* styl dla nagłówka h1 strony */
+	h1 {
+		margin: 3rem auto; /* margines */
+		max-width: 60rem; /* maksymalna szerokość */
+		width: 100%; /* szerokość */
+	}
+	/* styl dla listy zawierającej wszystkie przyciski nawigacji */
+	.nav-links {
+		gap: 1.2rem; /* odstęp między elementami */
+	}
+	/* styl dla grupy elementów w liście nawigacji */
+	.nav-link .nav-group-menu {
+		gap: 1.2rem; /* odstęp między elementami */
+		padding: 0.8rem 1.2rem; /* wewnętrzny odstęp */
+	}
+	/* styl dla tekstu w grupie elementów, w liście nawigacji */
+	.nav-links .nav-group-menu .nav-link-text {
+		display: block; /* wyświetlanie jako blok */
+	}
+	/* styl dla listy rozwijanej zawierającej wszystkie przyciski nawigacji */
+	.nav-links-dropdown {
+		left: unset; /* usuwanie ustawienia lewej krawędzi */
+		width: 40rem; /* szerokość */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 768px */
+@media screen and (min-width: 768px) {
+	/* styl dla tekstu w linkach nawigacji */
+	.nav-links .nav-link-text {
+		display: block; /* wyświetlanie jako blok */
+	}
+	/* styl dla przycisków nawigacji, które nie są przyciskiem posiadającym klasę dla przycisku menu rozwijanego */
+	.nav-link .nav-link-btn:not(.nav-group-menu) {
+		background: none; /* usuwanie tła */
+		gap: 1.2rem; /* odstęp między elementami */
+	}
+	/* styl dla ikon przycisków nawigacji, które nie są przyciskiem posiadającym klasę dla przycisku menu rozwijanego */
+	.nav-link .nav-link-btn:not(.nav-group-menu) .nav-link-icon {
+		display: flex; /* wyświetlanie jako fleks */
+		align-items: center; /* wyśrodkowanie w pionie */
+		justify-content: center; /* wyśrodkowanie w poziomie */
+		padding: 0.8rem; /* wewnętrzny odstęp */
+		background: var(--black800); /* kolor tła */
+		border-radius: 0.8rem; /* zaokrąglenie */
+	}
+	/* styl dla ikony aktywnego linku nawigacyjnego */
+	.nav-link.active .nav-link-btn .nav-link-icon {
+		background: var(--primary100); /* kolor tła dla aktywnego linka */
+	}
+	/* styl dla tekstu aktywnego linku nawigacyjnego */
+	.nav-link.active .nav-link-btn .nav-link-text {
+		color: var(--primary100); /* kolor tekstu dla aktywnego linka */
+	}
+	/* styl dla tekstu aktywnego linku nawigacyjnego po najechaniu na przycisk */
+	.nav-link.active .nav-link-btn:hover {
+		background: none; /* usuwanie tła */
+	}
+	/* styl dla ikony linku po najechaniu na niego */
+	.nav-link:hover .nav-link-btn .nav-link-icon {
+		background: var(--hoverdark); /* zmiana koloru tła po najechaniu */
+	}
+	/* styl dla ikony aktywnego linku po najechaniu na niego */
+	.nav-link.active:hover .nav-link-icon {
+		background: var(--hoverlight); /* zmiana koloru tła po najechaniu */
+	}
+	/* styl dla elementu wyświetlającego ilość przedmiotów w koszyku */
+	.cart-quantity {
+		top: 0.4rem; /* odległość od górnej krawędzi */
+		left: 3.5rem; /* odległość od lewej krawędzi */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1024px */
+@media screen and (min-width: 1024px) {
+	/* styl dla nagłówka h1 */
+	h1 {
+		max-width: 80rem; /* maksymalna szerokość */
+	}
+	/* styl dla stopki strony */
+	footer {
+		display: grid; /* wyświetlanie jako siatka */
+		grid-template-columns: repeat(
+			3,
+			1fr
+		); /* trzy kolumny o jednakowej szerokości */
+	}
+	/* styl dla okna dialogowego ze stopki */
+	.dialog-footer {
+		padding: 2.4rem; /* wewnętrzny odstęp */
+	}
+	/* styl nagłówka h2 w oknie dialogowym stopki, dla elementu pogrubionego w oknie dialogowym */
+	.dialog-footer h2,
+	.dialog-footer strong {
+		margin: 1rem; /* margines */
+		font-size: 2rem; /* wielkość tekstu */
+	}
+	/* styl paragrafu w oknie dialogowym stopki */
+	.dialog-footer p {
+		font-size: 1.6rem; /* wielkość tekstu */
+		text-align: justify; /* justyfikowanie tekstu */
+	}
+	/* styl dla linku nawigacji posiadającego klasę dla przycisku menu rozwijanego */
+	.nav-link:has(.nav-group-menu) {
+		display: none; /* ukrycie linku */
+	}
+	/* wyświetlanie wybranych linków w nawigacji */
+	.nav-links .nav-link:nth-child(2),
+	.nav-links .nav-link:nth-child(3),
+	.nav-links .nav-link:nth-child(4),
+	.nav-links .nav-link:nth-child(7) {
+		display: list-item; /* wyświetlanie jako element listy */
+	}
+	/* styl dla listy rozwijanej zawierającej wszystkie przyciski nawigacji */
+	.nav-links-dropdown {
+		display: none; /* ukrycie listy rozwijanej */
+	}
+}
+
+/* Style z wykorzystaniem zapytania media dla ekranów o szerokości większej niż 1444px */
+@media screen and (min-width: 1444px) {
+	/* styl dla nagłówka h1 strony */
+	h1 {
+		font-size: 3rem; /* wielkość tekstu */
+		margin: 4rem auto; /* margines */
+	}
+}
